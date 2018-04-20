@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Travel Blog</title>
+    <title>@ViewData["Title"] - Gummi Bear Kingdom</title>
 
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css">
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -26,8 +27,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/Experiences">Experiences</a></li>
-                    <li><a href="/Locations">Locations</a></li>
+                    <li><a href="/Experiences">Products</a></li>
+                    <li><a href="/Locations">Login</a></li>
 <!--                    <li><a href="/People">People</a></li>
 -->                </ul>
             </div>
@@ -37,6 +38,6 @@
         <br><br>
         @RenderBody()
     </div>
-
+    <div id="footer">This is some footer stuff</div>
 </body>
 </html>
