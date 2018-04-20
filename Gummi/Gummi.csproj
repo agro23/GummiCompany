@@ -16,6 +16,7 @@
     <Folder Include="Views\Experiences\" />
     <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\css\" />
+    <Folder Include="Views\Products\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,5 +45,6 @@
     <Compile Remove="Migrations\20180419174944_AddExperienceIdToPerson.Designer.cs" />
     <Compile Remove="Migrations\20180419174944_AddExperienceIdToPerson.cs" />
     <Compile Remove="Models\ExperiencePeople.cs" />
+    <Compile Remove="Views\HomeController.cs" />
   </ItemGroup>
 </Project>

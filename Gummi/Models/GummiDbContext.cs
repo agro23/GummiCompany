@@ -10,6 +10,8 @@ namespace Gummi.Models
     {
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Location> Locations { get; set; }
+        public DbSet<Product> Products { get; set; }
+
         //public DbSet<Person> People { get; set; }
         //public DbSet<ExperiencePeople> ExperiencePeople { get; set; }
 
