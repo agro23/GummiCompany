@@ -42,5 +42,6 @@
     <Compile Remove="Migrations\20180419183058_MakeExperiencePeople.cs" />
     <Compile Remove="Migrations\20180419174944_AddExperienceIdToPerson.Designer.cs" />
     <Compile Remove="Migrations\20180419174944_AddExperienceIdToPerson.cs" />
+    <Compile Remove="Models\ExperiencePeople.cs" />
   </ItemGroup>
 </Project>
