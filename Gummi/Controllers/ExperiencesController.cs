@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TravelBlog.Models;
-using TravelBlog.ViewModels;
+using Gummi.Models;
+using Gummi.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace TravelBlog.Controllers
+namespace Gummi.Controllers
 {
     public class ExperiencesController : Controller
     {
-        private TravelDbContext db = new TravelDbContext();
+        private GummiDbContext db = new GummiDbContext();
         public IActionResult Index()
         {
             List<Experience> model = db.Experiences.ToList();
@@ -32,7 +32,7 @@ namespace TravelBlog.Controllers
         [HttpPost]
         public IActionResult Create(Experience experience)
         {
-           
+
             db.Experiences.Add(experience);
 
             var thisPersonId = Int32.Parse(Request.Form["PersonId"]);
@@ -42,7 +42,7 @@ namespace TravelBlog.Controllers
             thisExperiencePeople.ExperienceId = experience.ExperienceId;
             thisExperiencePeople.PersonId = thisPerson.PersonId;
             db.ExperiencePeople.Add(thisExperiencePeople);
- 
+
             db.Entry(thisPerson).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -22127,11 +22127,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/Desktop/cam-travel-blog/TravelBlog/TravelBlog.csproj",
-      "projectName": "TravelBlog",
-      "projectPath": "/Users/Guest/Desktop/cam-travel-blog/TravelBlog/TravelBlog.csproj",
+      "projectUniqueName": "/Users/Guest/Desktop/Gummi/Gummi/Gummi.csproj",
+      "projectName": "Gummi",
+      "projectPath": "/Users/Guest/Desktop/Gummi/Gummi/Gummi.csproj",
       "packagesPath": "/Users/Guest/.nuget/packages/",
-      "outputPath": "/Users/Guest/Desktop/cam-travel-blog/TravelBlog/obj",
+      "outputPath": "/Users/Guest/Desktop/Gummi/Gummi/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/Guest/.config/NuGet/NuGet.Config"

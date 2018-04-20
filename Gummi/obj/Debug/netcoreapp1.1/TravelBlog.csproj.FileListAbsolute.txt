@@ -1,0 +1,5 @@
+/Users/Guest/Desktop/Gummi/Gummi/bin/Debug/netcoreapp1.1/TravelBlog.deps.json
+/Users/Guest/Desktop/Gummi/Gummi/bin/Debug/netcoreapp1.1/TravelBlog.runtimeconfig.json
+/Users/Guest/Desktop/Gummi/Gummi/bin/Debug/netcoreapp1.1/TravelBlog.runtimeconfig.dev.json
+/Users/Guest/Desktop/Gummi/Gummi/obj/Debug/netcoreapp1.1/TravelBlog.csproj.CoreCompileInputs.cache
+/Users/Guest/Desktop/Gummi/Gummi/obj/Debug/netcoreapp1.1/TravelBlog.AssemblyInfo.cs

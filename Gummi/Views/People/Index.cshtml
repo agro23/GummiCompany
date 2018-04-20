@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TravelBlog.Models.Person>
+@model IEnumerable<Gummi.Models.Person>
 
 @{
     ViewData["Title"] = "People";
@@ -15,11 +15,11 @@
         <th></th>
     </tr>
          @foreach (var listPerson in Model)
-  
+
         {
            <tr>
                <td> @Html.DisplayFor(modelDivision => listPerson.Name)</td>
-           
+
                <td>
                    @Html.ActionLink("Edit", "Edit", new { id = listPerson.PersonId }) |
                    @Html.ActionLink("Delete", "Delete", new { id = listPerson.PersonId })
@@ -27,8 +27,8 @@
            </tr>
 
         }
-   
- 
+
+
 </table>
 
 @Html.ActionLink("Add New Person", "Create")

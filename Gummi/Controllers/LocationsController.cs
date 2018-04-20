@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TravelBlog.Models;
+using Gummi.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace TravelBlog.Controllers
+namespace Gummi.Controllers
 {
     public class LocationsController : Controller
     {
-        private TravelDbContext db = new TravelDbContext();
+        private GummiDbContext db = new GummiDbContext();
         public IActionResult Index()
         {
             List<Location> model = db.Locations.ToList();
@@ -53,14 +53,14 @@ namespace TravelBlog.Controllers
             return View(thisLocation);
         }
 
-        public IActionResult Delete(int id) 
+        public IActionResult Delete(int id)
         {
             var thisLocation = db.Locations.FirstOrDefault(Locations => Locations.LocationId == id);
             return View(thisLocation);
         }
 
         [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id) 
+        public IActionResult DeleteConfirmed(int id)
         {
             var thisLocation = db.Locations.FirstOrDefault(Locations => Locations.LocationId == id);
             db.Locations.Remove(thisLocation);

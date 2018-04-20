@@ -3,20 +3,20 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using TravelBlog.Models;
+using Gummi.Models;
 
-namespace TravelBlog.Migrations
+namespace Gummi.Migrations
 {
-    [DbContext(typeof(TravelDbContext))]
-    [Migration("20180419183747_MakeExperiencePeople")]
-    partial class MakeExperiencePeople
+    [DbContext(typeof(GummiDbContext))]
+    [Migration("20180420205545_TryToCreateAgain")]
+    partial class TryToCreateAgain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
 
-            modelBuilder.Entity("TravelBlog.Models.Experience", b =>
+            modelBuilder.Entity("Gummi.Models.Experience", b =>
                 {
                     b.Property<int>("ExperienceId")
                         .ValueGeneratedOnAdd();
@@ -34,7 +34,7 @@ namespace TravelBlog.Migrations
                     b.ToTable("Experiences");
                 });
 
-            modelBuilder.Entity("TravelBlog.Models.ExperiencePeople", b =>
+            modelBuilder.Entity("Gummi.Models.ExperiencePeople", b =>
                 {
                     b.Property<int>("ExperiencePeopleId")
                         .ValueGeneratedOnAdd();
@@ -52,7 +52,7 @@ namespace TravelBlog.Migrations
                     b.ToTable("ExperiencePeople");
                 });
 
-            modelBuilder.Entity("TravelBlog.Models.Location", b =>
+            modelBuilder.Entity("Gummi.Models.Location", b =>
                 {
                     b.Property<int>("LocationId")
                         .ValueGeneratedOnAdd();
@@ -66,7 +66,7 @@ namespace TravelBlog.Migrations
                     b.ToTable("Locations");
                 });
 
-            modelBuilder.Entity("TravelBlog.Models.Person", b =>
+            modelBuilder.Entity("Gummi.Models.Person", b =>
                 {
                     b.Property<int>("PersonId")
                         .ValueGeneratedOnAdd();
@@ -82,30 +82,30 @@ namespace TravelBlog.Migrations
                     b.ToTable("People");
                 });
 
-            modelBuilder.Entity("TravelBlog.Models.Experience", b =>
+            modelBuilder.Entity("Gummi.Models.Experience", b =>
                 {
-                    b.HasOne("TravelBlog.Models.Location", "Location")
+                    b.HasOne("Gummi.Models.Location", "Location")
                         .WithMany("Experiences")
                         .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("TravelBlog.Models.ExperiencePeople", b =>
+            modelBuilder.Entity("Gummi.Models.ExperiencePeople", b =>
                 {
-                    b.HasOne("TravelBlog.Models.Experience", "Experience")
+                    b.HasOne("Gummi.Models.Experience", "Experience")
                         .WithMany()
                         .HasForeignKey("ExperienceId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("TravelBlog.Models.Person", "Person")
+                    b.HasOne("Gummi.Models.Person", "Person")
                         .WithMany()
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("TravelBlog.Models.Person", b =>
+            modelBuilder.Entity("Gummi.Models.Person", b =>
                 {
-                    b.HasOne("TravelBlog.Models.Experience")
+                    b.HasOne("Gummi.Models.Experience")
                         .WithMany("People")
                         .HasForeignKey("ExperienceId")
                         .OnDelete(DeleteBehavior.Cascade);

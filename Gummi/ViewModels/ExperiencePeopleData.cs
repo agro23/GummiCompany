@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using TravelBlog.Models;
+using Gummi.Models;
 
 
-namespace TravelBlog.ViewModels
+namespace Gummi.ViewModels
 {
     public class ExperiencePeopleData
     {
-        public ExperiencePeopleData()
-        {
-            public IEnumerable<Person> People { get; set; }
-            public Experience Experience { get; set; }
+        //public ExperiencePeopleData()
+        //{
+        //    public IEnumerable<Person> People { get; set; }
+        //    public Experience Experience { get; set; }
 
-        }
+        //}
     }
 }

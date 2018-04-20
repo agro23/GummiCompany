@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TravelBlog.Models
+namespace Gummi.Models
 {
     [Table("ExperiencePeople")]
     public class ExperiencePeople
@@ -15,6 +15,6 @@ namespace TravelBlog.Models
         public Experience Experience { get; set; }
         public Person Person { get; set; }
 
-    
+
     }
 }

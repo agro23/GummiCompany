@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TravelBlog.Models.Experience>
+﻿@model IEnumerable<Gummi.Models.Experience>
 
 @{
     ViewData["Title"] = "Experience";
@@ -15,11 +15,11 @@
         <th></th>
     </tr>
          @foreach (var listExperience in Model)
-  
+
         {
            <tr>
                <td> @Html.DisplayFor(modelDivision => listExperience.Title)</td>
-           
+
                <td>
                    @Html.ActionLink("Edit", "Edit", new { id = listExperience.ExperienceId }) |
                    @Html.ActionLink("Details", "Details", new { id = listExperience.ExperienceId }) |
@@ -28,8 +28,8 @@
            </tr>
 
         }
-   
- 
+
+
 </table>
 
 @Html.ActionLink("Add a new Experience", "Create")

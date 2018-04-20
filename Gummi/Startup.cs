@@ -10,9 +10,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using TravelBlog.Models;
+using Gummi.Models;
 
-namespace TravelBlog
+namespace Gummi
 {
     public class Startup
     {
@@ -32,7 +32,7 @@ namespace TravelBlog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddEntityFramework()
-                .AddDbContext<TravelDbContext>(options => options.UseMySql(ConnectionString));
+                .AddDbContext<GummiDbContext>(options => options.UseMySql(ConnectionString));
             services.AddMvc();
         }
 

@@ -4,16 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace TravelBlog.Models
+namespace Gummi.Models
 {
-    public class TravelDbContext : DbContext
+    public class GummiDbContext : DbContext
     {
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<ExperiencePeople> ExperiencePeople { get; set; }
 
-        public TravelDbContext()
+        public GummiDbContext()
         {
         }
 
@@ -22,7 +22,7 @@ namespace TravelBlog.Models
             optionsBuilder.UseMySql(Startup.ConnectionString);
         }
 
-        public TravelDbContext(DbContextOptions<TravelDbContext> options)
+        public GummiDbContext(DbContextOptions<GummiDbContext> options)
             : base(options)
         {
         }
@@ -30,7 +30,7 @@ namespace TravelBlog.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-         
+
         }
     }
 }

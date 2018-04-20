@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TravelBlog.Migrations
+namespace Gummi.Migrations
 {
-    public partial class addHashSetsToExperience : Migration
+    public partial class TryToCreateAgain : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
