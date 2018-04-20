@@ -13,53 +13,60 @@ namespace Gummi.Controllers
 {
     public class PeopleController : Controller
     {
+
         private GummiDbContext db = new GummiDbContext();
         public IActionResult Index()
-        {
-            List<Person> model = db.People.ToList();
-            return View(model);
-        }
-
-        public IActionResult Create()
         {
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Create(Person person)
-        {
-            db.People.Add(person);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //private GummiDbContext db = new GummiDbContext();
+        //public IActionResult Index()
+        //{
+        //    List<Person> model = db.People.ToList();
+        //    return View(model);
+        //}
 
-        public IActionResult Edit(int id)
-        {
-            var thisPerson = db.People.FirstOrDefault(People => People.PersonId == id);
-            return View(thisPerson);
-        }
+        //public IActionResult Create()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public IActionResult Edit(Person person)
-        {
-            db.Entry(person).State = EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost]
+        //public IActionResult Create(Person person)
+        //{
+        //    db.People.Add(person);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
-        public IActionResult Delete(int id)
-        {
-            var thisPerson = db.People.FirstOrDefault(People => People.PersonId == id);
-            return View(thisPerson);
-        }
+        //public IActionResult Edit(int id)
+        //{
+        //    var thisPerson = db.People.FirstOrDefault(People => People.PersonId == id);
+        //    return View(thisPerson);
+        //}
 
-        [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id)
-        {
-            var thisPerson = db.People.FirstOrDefault(People => People.PersonId == id);
-            db.People.Remove(thisPerson);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost]
+        //public IActionResult Edit(Person person)
+        //{
+        //    db.Entry(person).State = EntityState.Modified;
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
+        //public IActionResult Delete(int id)
+        //{
+        //    var thisPerson = db.People.FirstOrDefault(People => People.PersonId == id);
+        //    return View(thisPerson);
+        //}
+
+        //[HttpPost, ActionName("Delete")]
+        //public IActionResult DeleteConfirmed(int id)
+        //{
+        //    var thisPerson = db.People.FirstOrDefault(People => People.PersonId == id);
+        //    db.People.Remove(thisPerson);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
     }
 }

@@ -24,7 +24,7 @@ namespace Gummi.Controllers
         public IActionResult Create()
         {
             ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Place");
-            ViewBag.PersonId = new SelectList(db.People, "PersonId", "Name");
+            //ViewBag.PersonId = new SelectList(db.People, "PersonId", "Name");
 
             return View();
         }
@@ -35,15 +35,15 @@ namespace Gummi.Controllers
 
             db.Experiences.Add(experience);
 
-            var thisPersonId = Int32.Parse(Request.Form["PersonId"]);
-            var thisPerson = db.People.FirstOrDefault(People => People.PersonId == thisPersonId);
-            thisPerson.ExperienceId = experience.ExperienceId;
-            var thisExperiencePeople = new ExperiencePeople{};
-            thisExperiencePeople.ExperienceId = experience.ExperienceId;
-            thisExperiencePeople.PersonId = thisPerson.PersonId;
-            db.ExperiencePeople.Add(thisExperiencePeople);
+            //var thisPersonId = Int32.Parse(Request.Form["PersonId"]);
+            //var thisPerson = db.People.FirstOrDefault(People => People.PersonId == thisPersonId);
+            //thisPerson.ExperienceId = experience.ExperienceId;
+            //var thisExperiencePeople = new ExperiencePeople{};
+            //thisExperiencePeople.ExperienceId = experience.ExperienceId;
+            //thisExperiencePeople.PersonId = thisPerson.PersonId;
+            //db.ExperiencePeople.Add(thisExperiencePeople);
 
-            db.Entry(thisPerson).State = EntityState.Modified;
+            //db.Entry(thisPerson).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -51,7 +51,7 @@ namespace Gummi.Controllers
         public IActionResult Edit(int id)
         {
             ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Place");
-            ViewBag.People = new SelectList(db.People, "PersonId", "Name");
+            //ViewBag.People = new SelectList(db.People, "PersonId", "Name");
 
             var thisExperience = db.Experiences.FirstOrDefault(Experiences => Experiences.ExperienceId == id);
             return View(thisExperience);
@@ -60,13 +60,13 @@ namespace Gummi.Controllers
         [HttpPost]
         public IActionResult Edit(Experience experience)
         {
-            var thisPersonId = Int32.Parse(Request.Form["People"]);
-            var thisPerson = db.People.FirstOrDefault(People => People.PersonId == thisPersonId);
-            thisPerson.ExperienceId = experience.ExperienceId;
-            var thisExperiencePeople = new ExperiencePeople { };
-            thisExperiencePeople.ExperienceId = experience.ExperienceId;
-            thisExperiencePeople.PersonId = thisPerson.PersonId;
-            db.ExperiencePeople.Add(thisExperiencePeople);
+            //var thisPersonId = Int32.Parse(Request.Form["People"]);
+            //var thisPerson = db.People.FirstOrDefault(People => People.PersonId == thisPersonId);
+            //thisPerson.ExperienceId = experience.ExperienceId;
+            //var thisExperiencePeople = new ExperiencePeople { };
+            //thisExperiencePeople.ExperienceId = experience.ExperienceId;
+            //thisExperiencePeople.PersonId = thisPerson.PersonId;
+            //db.ExperiencePeople.Add(thisExperiencePeople);
 
             db.Entry(experience).State = EntityState.Modified;
             db.SaveChanges();
