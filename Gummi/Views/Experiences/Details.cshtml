@@ -1,0 +1,20 @@
+﻿@model TravelBlog.Models.Experience
+
+@{
+    ViewData["Title"] = "Experience - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Experience Details</h2>
+<hr />
+
+<p>@Html.DisplayNameFor(model => model.Title) : @Html.DisplayFor(model => model.Title)</p>
+<p>@Html.DisplayNameFor(model => model.Content) : @Html.DisplayFor(model => model.Content)</p>
+<p>@Html.DisplayNameFor(model => model.Location.Place) : @Html.DisplayFor(model => model.Location.Place)</p>
+
+<ul>
+@for(var i=0; i < something.Count; i++){
+    <li>This is a person that had that experience</li>
+}
+</ul>>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.ExperienceId }) | @Html.ActionLink("Back to Experiences", "Index")</p>
