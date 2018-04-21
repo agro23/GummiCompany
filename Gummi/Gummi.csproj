@@ -14,7 +14,6 @@
     <Folder Include="Views\Locations\" />
     <Folder Include="Views\People\" />
     <Folder Include="Views\Experiences\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="Views\Products\" />
   </ItemGroup>
@@ -46,5 +45,21 @@
     <Compile Remove="Migrations\20180419174944_AddExperienceIdToPerson.cs" />
     <Compile Remove="Models\ExperiencePeople.cs" />
     <Compile Remove="Views\HomeController.cs" />
+    <Compile Remove="ViewModels\ExperiencePeopleData.cs" />
+    <Compile Remove="Migrations\20180420204927_EvolveIntoNewProgram.Designer.cs" />
+    <Compile Remove="Migrations\20180420204927_EvolveIntoNewProgram.cs" />
+    <Compile Remove="Migrations\20180420205545_TryToCreateAgain.Designer.cs" />
+    <Compile Remove="Migrations\20180420205545_TryToCreateAgain.cs" />
+    <Compile Remove="Migrations\GummiDbContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20180420235204_AddProductsToDb.Designer.cs" />
+    <Compile Remove="Migrations\20180420235204_AddProductsToDb.cs" />
+    <Compile Remove="Migrations\20180421000834_RemoveOneToManyForNow.Designer.cs" />
+    <Compile Remove="Migrations\20180421000834_RemoveOneToManyForNow.cs" />
+    <Compile Remove="Migrations\20180421001508_WhatTheHellIsGoingOn.Designer.cs" />
+    <Compile Remove="Migrations\20180421001508_WhatTheHellIsGoingOn.cs" />
+    <Compile Remove="Migrations\20180421001758_WhatTheHellIsGoingOnHere.Designer.cs" />
+    <Compile Remove="Migrations\20180421001758_WhatTheHellIsGoingOnHere.cs" />
+    <Compile Remove="Migrations\20180421002419_WhatTheHellIsGoingOnHereReally.Designer.cs" />
+    <Compile Remove="Migrations\20180421002419_WhatTheHellIsGoingOnHereReally.cs" />
   </ItemGroup>
 </Project>

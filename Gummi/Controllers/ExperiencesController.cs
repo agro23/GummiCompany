@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Gummi.Models;
-using Gummi.ViewModels;
+//using Gummi.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -77,7 +77,7 @@ namespace Gummi.Controllers
         {
             var thisExperience = db.Experiences.Include(ExperiencesController => ExperiencesController.Location).FirstOrDefault(Experiences => Experiences.ExperienceId == id);
             //ViewBag.PeopleHere = new SelectList(db.ExperiencePeople, "ExperiencePeopleId", "???")
-            var viewModel = new ExperiencePeopleData();
+            //var viewModel = new ExperiencePeopleData();
             //viewModel.People = db.ExperiencePeople
                 //.Include("People").Where(p => p.ExperiencePeople == thisExperience.ExperienceId).ToList();
             return View(thisExperience);

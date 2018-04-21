@@ -34,23 +34,23 @@ namespace Gummi.Migrations
                     b.ToTable("Experiences");
                 });
 
-            modelBuilder.Entity("Gummi.Models.ExperiencePeople", b =>
-                {
-                    b.Property<int>("ExperiencePeopleId")
-                        .ValueGeneratedOnAdd();
+            //modelBuilder.Entity("Gummi.Models.ExperiencePeople", b =>
+                //{
+                //    b.Property<int>("ExperiencePeopleId")
+                //        .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ExperienceId");
+                //    b.Property<int>("ExperienceId");
 
-                    b.Property<int>("PersonId");
+                //    b.Property<int>("PersonId");
 
-                    b.HasKey("ExperiencePeopleId");
+                //    b.HasKey("ExperiencePeopleId");
 
-                    b.HasIndex("ExperienceId");
+                //    b.HasIndex("ExperienceId");
 
-                    b.HasIndex("PersonId");
+                //    b.HasIndex("PersonId");
 
-                    b.ToTable("ExperiencePeople");
-                });
+                //    b.ToTable("ExperiencePeople");
+                //});
 
             modelBuilder.Entity("Gummi.Models.Location", b =>
                 {
@@ -90,18 +90,18 @@ namespace Gummi.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Gummi.Models.ExperiencePeople", b =>
-                {
-                    b.HasOne("Gummi.Models.Experience", "Experience")
-                        .WithMany()
-                        .HasForeignKey("ExperienceId")
-                        .OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity("Gummi.Models.ExperiencePeople", b =>
+                //{
+                //    b.HasOne("Gummi.Models.Experience", "Experience")
+                //        .WithMany()
+                //        .HasForeignKey("ExperienceId")
+                //        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Gummi.Models.Person", "Person")
-                        .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
+                //    b.HasOne("Gummi.Models.Person", "Person")
+                //        .WithMany()
+                //        .HasForeignKey("PersonId")
+                //        .OnDelete(DeleteBehavior.Cascade);
+                //});
 
             modelBuilder.Entity("Gummi.Models.Person", b =>
                 {
