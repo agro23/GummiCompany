@@ -8,9 +8,10 @@ using Gummi.Models;
 namespace Gummi.Migrations
 {
     [DbContext(typeof(GummiDbContext))]
-    partial class GummiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180427180526_UpdateProductsToMakeReviews")]
+    partial class UpdateProductsToMakeReviews
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
@@ -72,13 +73,13 @@ namespace Gummi.Migrations
 
                     b.Property<string>("Content");
 
-                    b.Property<int?>("ProductId");
+                    b.Property<int?>("ProductsProductId");
 
                     b.Property<int>("Rating");
 
                     b.HasKey("ReviewId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductsProductId");
 
                     b.ToTable("Reviews");
                 });
@@ -93,9 +94,9 @@ namespace Gummi.Migrations
 
             modelBuilder.Entity("Gummi.Models.Review", b =>
                 {
-                    b.HasOne("Gummi.Models.Product")
+                    b.HasOne("Gummi.Models.Product", "Products")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductsProductId");
                 });
         }
     }

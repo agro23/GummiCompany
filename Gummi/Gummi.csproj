@@ -16,6 +16,7 @@
     <Folder Include="Views\Experiences\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="Views\Products\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,5 +62,21 @@
     <Compile Remove="Migrations\20180421001758_WhatTheHellIsGoingOnHere.cs" />
     <Compile Remove="Migrations\20180421002419_WhatTheHellIsGoingOnHereReally.Designer.cs" />
     <Compile Remove="Migrations\20180421002419_WhatTheHellIsGoingOnHereReally.cs" />
+    <Compile Remove="Migrations\20180427182356_TryAgainWithDbAddReviews.Designer.cs" />
+    <Compile Remove="Migrations\20180427182356_TryAgainWithDbAddReviews.cs" />
+    <Compile Remove="Migrations\20180427182604_TryAgainWithDbAddReviewTable.Designer.cs" />
+    <Compile Remove="Migrations\20180427182604_TryAgainWithDbAddReviewTable.cs" />
+    <Compile Remove="BLAH20180427174653_AddReviews.Designer.cs" />
+    <Compile Remove="BLAH20180427174653_AddReviews.cs" />
+    <Compile Remove="20180421003028_WhatTheHellIsGoingOnHereReallyReally.cs" />
+    <Compile Remove="20180421003028_WhatTheHellIsGoingOnHereReallyReally.Designer.cs" />
+    <Compile Remove="20180421003516_WhatTheHellIsGoingOnHereReallyReallyReally.cs" />
+    <Compile Remove="20180421003516_WhatTheHellIsGoingOnHereReallyReallyReally.Designer.cs" />
+    <Compile Remove="20180421003659_TryToMakeTables.cs" />
+    <Compile Remove="20180421003659_TryToMakeTables.Designer.cs" />
+    <Compile Remove="20180427180526_UpdateProductsToMakeReviews.cs" />
+    <Compile Remove="20180427180526_UpdateProductsToMakeReviews.Designer.cs" />
+    <Compile Remove="20180427181016_UpdateDbProductsAddReviews.cs" />
+    <Compile Remove="20180427181016_UpdateDbProductsAddReviews.Designer.cs" />
   </ItemGroup>
 </Project>

@@ -14,6 +14,9 @@ namespace Gummi.Models
         [Key]
         public int ProductId { get; set; }
         public string Name { get; set; }
+        public int Cost { get; set; }
         public string Description { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
+
     }
 }
