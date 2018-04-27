@@ -8,6 +8,7 @@ A .Net application and a database as a marketing front end for a candy company.
 ## Rules
 
 Today I'll be using ASP.NET Core to build a basic web app. I'll be building this same project for the next two Fridays.
+UPDATE: 
 
 ## Objectives
 
@@ -35,15 +36,53 @@ Today I'll be using ASP.NET Core to build a basic web app. I'll be building this
 **Database**
 
 * The database should be built code-first. They want to have simple setup on the Gummi Bear Kingdom servers, so I'll need to have a simple database migration set up and ready to run.
+* UPDATE 4/27/18: The site should have functionality to review products so the database should include a one-to-many relationship between Products and Reviews.
+- Products: must have a name, cost, and description.
+- Reviews must have an author, content_body, and rating (1-5). 
+- Migrations are used to update the database from last week. 
 
 **Landing Page**
 
-* This is the main page, which includes some information about Gummi Bear Kingdom, and allows access to other areas of the site.
+* This is the main page, which includes some information about Gummi Bear Kingdom, and allows access to other areas of the site: An About, and Products Page
+	- The top three products by number of reviews will be listed here.
 
 **Products**
 
-* The Products section should contain a list of products offered by Gummi Bear Kingdom. There will be a few "dummy" products, but not too many.
+* The Products section will contain a list of products offered by Gummi Bear Kingdom. There will be a few "dummy" products, but not too many.
 	- Products will have a _name_, _cost_, and _description_.
+
+* Each product will have its own Details page where its information is displayed as well as its reviews.
+	
+**Testing**
+
+I will use a mock database for testing controller and model functions before using the live test database to test for integration. Required database setup information is below in this README.
+
+The site will include the following functionality and their corresponding tests:
+
+* Fully functioning Product model with tests for:
+	- The constructor
+	- Equals()
+	- Method for returning an average rating
+
+* Fully functioning Review model with tests for:
+	- The constructor
+	- Equals()
+	- Method for checking if rating is between 1-5,
+	- Method for checking if the Review’s content_body contains less than 255 characters.
+
+* Products can be created, retrieved, updated, and removed from the database, as demonstrated by integration tests for:
+	- Create()
+	- Index()
+	- Update()
+	- Delete()
+	- DeleteAll()
+
+* Reviews are properly retrieved from and saved to the database with tests for:
+	- Index()
+	- Create()
+
+* All controller methods return the correct ActionResult (usually ViewResult or RedirectToActionResult) and Model datatype for each method. With tests for:
+	- GET and POST for each route.
 
 **Styling**
 
@@ -60,6 +99,7 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 **Admin**
 *    An admin should be able to add and remove individual Products, as well as delete all Products. 
+	- All users are Admin to begin with
 
 ## Specifications
 
