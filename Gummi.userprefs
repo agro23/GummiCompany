@@ -1,18 +1,29 @@
 ﻿<Properties StartupConfiguration="{F49D2744-64E6-41D2-9672-35ED8AB2F103}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gummi/Models/Product.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gummi/Migrations/20180427224338_AddUserToDb.cs">
     <Files>
       <File FileName="Gummi.Tests/ModelTests/UserTests.cs" Line="24" Column="2" />
       <File FileName="Gummi.Tests/ModelTests/ReviewTests.cs" Line="13" Column="22" />
-      <File FileName="Gummi.Tests/ModelTests/ProductTests.cs" Line="18" Column="41" />
-      <File FileName="Gummi/Models/Product.cs" Line="19" Column="65" />
+      <File FileName="Gummi.Tests/ModelTests/ProductTests.cs" Line="31" Column="18" />
+      <File FileName="Gummi/Models/Product.cs" Line="25" Column="61" />
+      <File FileName="Gummi/Migrations/20180427224338_AddUserToDb.cs" Line="26" Column="34" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="Gummi" expanded="True" selected="True">
+          <Node name="Gummi" expanded="True">
             <Node name="Solution Items" expanded="True">
               <Node name="Gummi.Tests" expanded="True">
-                <Node name="Gummi" expanded="True" />
+                <Node name="Gummi" expanded="True">
+                  <Node name="Tests" expanded="True">
+                    <Node name="ModelTests" expanded="True">
+                      <Node name="ProductTests" expanded="True">
+                        <Node name="ProductAverageRating_ReturnsCorrectResult_Int" selected="True" />
+                      </Node>
+                      <Node name="ReviewTests" expanded="True" />
+                      <Node name="UserTests" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
               </Node>
             </Node>
           </Node>
