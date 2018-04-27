@@ -8,7 +8,7 @@ A .Net application and a database as a marketing front end for a candy company.
 ## Rules
 
 Today I'll be using ASP.NET Core to build a basic web app. I'll be building this same project for the next two Fridays.
-UPDATE: 
+UPDATE:
 
 ## Objectives
 
@@ -38,8 +38,8 @@ UPDATE:
 * The database should be built code-first. They want to have simple setup on the Gummi Bear Kingdom servers, so I'll need to have a simple database migration set up and ready to run.
 * UPDATE 4/27/18: The site should have functionality to review products so the database should include a one-to-many relationship between Products and Reviews.
 - Products: must have a name, cost, and description.
-- Reviews must have an author, content_body, and rating (1-5). 
-- Migrations are used to update the database from last week. 
+- Reviews must have an author, content_body, and rating (1-5).
+- Migrations are used to update the database from last week.
 
 **Landing Page**
 
@@ -52,7 +52,7 @@ UPDATE:
 	- Products will have a _name_, _cost_, and _description_.
 
 * Each product will have its own Details page where its information is displayed as well as its reviews.
-	
+
 **Testing**
 
 I will use a mock database for testing controller and model functions before using the live test database to test for integration. Required database setup information is below in this README.
@@ -98,16 +98,34 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 *    A user should be able to click on each Product and see its Details.
 
 **Admin**
-*    An admin should be able to add and remove individual Products, as well as delete all Products. 
+*    An admin should be able to add and remove individual Products, as well as delete all Products.
 	- All users are Admin to begin with
 
 ## Specifications
 
 * Data Models are created
 
+* UPDATE: 4/27 -- add properties to Product models <-- 
+
+* UPDATE: 4/27 -- add Reviews model
+
 * CRUD
 
-* Views and Controllers work
+* UPDATE: 4/27 -- create one-to-many relationship between Reviews and Products
+
+* UPDATE: 4/27 -- create CRUD for Reviews
+
+* Model testing with mock database
+
+* Controller Testing with mock database
+
+* Models and Controllers work
+
+* Integration testing with models and controllers using test database
+
+* Add Views
+
+* MVC working
 
 * Layout is present for styling
 
@@ -117,13 +135,14 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 ## Methodology and Comments
 
-I'm starting out with the travel blog website as my example template because it is constructed to be a blog. I will adapt Experiences into Blog entries, People as Users and places as Products. Once CRUD is up and running I will experiment with styles then move on to separating Admins from Users. Lastly I will implement tests as I learn them next week and the refactor the code and polish the UI as applicible. 
+I'm starting out with the travel blog website as my example template because it is constructed to be a blog. I will adapt Experiences into Blog entries, People as Users and places as Products. Once CRUD is up and running I will experiment with styles then move on to separating Admins from Users. Lastly I will implement tests as I learn them next week and the refactor the code and polish the UI as applicible.
 
 ## Technologies Used
 
 * HTML
 * CSS
 * Javascript
+* jQuery
 * C#
 * .NET (ASP) Core
 * mySQL
