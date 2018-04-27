@@ -1,0 +1,44 @@
+﻿
+body {
+    /*background-color: gray;
+    background-image: url("../img/gummi.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    background: url("../img/gummi.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}
+
+div#footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    color: #FCFCFC;
+    background: #333;
+    padding: 8px
+}
+
+.infoTop {
+    opacity: 0.75;
+    filter: alpha(opacity=75); /* For IE8 and earlier */
+    margin-top: 7%;
+    text-align: center;
+    padding: 1%;
+    font-size: 1.5em;
+}
+
+.infoGeneral {
+    opacity: 0.75;
+    filter: alpha(opacity=75); /* For IE8 and earlier */
+    margin-top: 10px;
+    text-align: center;
+    padding: 1%;
+    font-size: 1em;
+
+}
+.decoratedEdges {
+    border-radius: 25px;
+}

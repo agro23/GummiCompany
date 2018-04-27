@@ -1,0 +1,25 @@
+﻿@model Gummi.Models.User
+
+@{
+    ViewData["Title"] = "User - Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+<hr />
+<h4>Edit this User :@Html.DisplayFor(model => model.Name)</h4>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.UserId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+
+    <input type="submit" value="Save" class="btn btn-default" />
+
+}
+
+@Html.ActionLink("Back to Users", "Index")

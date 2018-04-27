@@ -1,0 +1,24 @@
+﻿@model Gummi.Models.User
+
+@{
+    ViewData["Title"] = "User - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create a new User</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)<br />
+    @Html.EditorFor(model => model.Name)<br />
+    @Html.LabelFor(model => model.Cost)<br />
+    @Html.EditorFor(model => model.Cost)<br />
+    @Html.LabelFor(model => model.Description)<br />
+    @Html.EditorFor(model => model.Description)<br />
+
+    <input type="submit" value="Create" class="btn btn-default" />
+
+}
+
+@Html.ActionLink("Back to Users", "Index")

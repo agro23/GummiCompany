@@ -18,6 +18,7 @@
     <Folder Include="Views\Products\" />
     <Folder Include="Migrations\" />
     <Folder Include="Views\Reviews\" />
+    <Folder Include="Views\Users\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -79,5 +80,8 @@
     <Compile Remove="20180427180526_UpdateProductsToMakeReviews.Designer.cs" />
     <Compile Remove="20180427181016_UpdateDbProductsAddReviews.cs" />
     <Compile Remove="20180427181016_UpdateDbProductsAddReviews.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Products\styles.css" />
   </ItemGroup>
 </Project>

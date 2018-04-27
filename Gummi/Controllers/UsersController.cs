@@ -11,12 +11,12 @@ using Gummi.Models;
 
 namespace Gummi.Controllers
 {
-    public class ReviewsController : Controller
+    public class UsersController : Controller
     {
         private GummiDbContext db = new GummiDbContext();
         public IActionResult Index()
         {
-            List<Review> model = db.Reviews.ToList();
+            List<User> model = db.Users.ToList();
             return View(model);
         }
 
@@ -26,44 +26,44 @@ namespace Gummi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Review review)
+        public IActionResult Create(User user)
         {
-            db.Reviews.Add(review);
+            db.Users.Add(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult Edit(int id)
         {
-            var thisReview = db.Reviews.FirstOrDefault(Reviews => Reviews.ReviewId == id);
-            return View(thisReview);
+            var thisUser = db.Users.FirstOrDefault(Users => Users.UserId == id);
+            return View(thisUser);
         }
 
         [HttpPost]
-        public IActionResult Edit(Review review)
+        public IActionResult Edit(User user)
         {
-            db.Entry(review).State = EntityState.Modified;
+            db.Entry(user).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult Details(int id)
         {
-            var thisReview = db.Reviews.FirstOrDefault(Reviews => Reviews.ReviewId == id);
-            return View(thisReview);
+            var thisUser = db.Users.FirstOrDefault(Users => Users.UserId == id);
+            return View(thisUser);
         }
 
         public IActionResult Delete(int id)
         {
-            var thisReview = db.Reviews.FirstOrDefault(Reviews => Reviews.ReviewId == id);
-            return View(thisReview);
+            var thisUser = db.Users.FirstOrDefault(Users => Users.UserId == id);
+            return View(thisUser);
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            var thisReview = db.Reviews.FirstOrDefault(Reviews => Reviews.ReviewId == id);
-            db.Reviews.Remove(thisReview);
+            var thisUser = db.Users.FirstOrDefault(Users => Users.UserId == id);
+            db.Users.Remove(thisUser);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

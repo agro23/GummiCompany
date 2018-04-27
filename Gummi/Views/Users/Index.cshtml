@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Gummi.Models.User>
+
+@{
+    ViewData["Title"] = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="infoGeneral infoTop panel-row body-content">
+    <h2>User List</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+             @foreach (var listUser in Model)
+
+            {
+               <tr>
+                   <td> @Html.DisplayFor(modelDivision => listUser.Name)</td>
+
+                   <td>
+                       @Html.ActionLink("Edit", "Edit", new { id = listUser.UserId }) |
+                       @Html.ActionLink("Details", "Details", new { id = listUser.UserId }) |
+                       @Html.ActionLink("Delete", "Delete", new { id = listUser.UserId })
+                   </td>
+               </tr>
+
+            }
+
+
+    </table>
+
+    @Html.ActionLink("Create new User", "Create")
+    </div>
+</body>
