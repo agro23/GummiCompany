@@ -1,11 +1,23 @@
 ﻿<Properties StartupConfiguration="{F49D2744-64E6-41D2-9672-35ED8AB2F103}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gummi/Migrations/20180427224338_AddUserToDb.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gummi/Controllers/UsersController.cs">
     <Files>
       <File FileName="Gummi.Tests/ModelTests/UserTests.cs" Line="24" Column="2" />
-      <File FileName="Gummi.Tests/ModelTests/ReviewTests.cs" Line="13" Column="22" />
-      <File FileName="Gummi.Tests/ModelTests/ProductTests.cs" Line="31" Column="18" />
-      <File FileName="Gummi/Models/Product.cs" Line="25" Column="61" />
-      <File FileName="Gummi/Migrations/20180427224338_AddUserToDb.cs" Line="26" Column="34" />
+      <File FileName="Gummi.Tests/ModelTests/ReviewTests.cs" Line="43" Column="52" />
+      <File FileName="Gummi.Tests/ModelTests/ProductTests.cs" Line="58" Column="10" />
+      <File FileName="Gummi/Models/Product.cs" Line="30" Column="2" />
+      <File FileName="Gummi/Migrations/20180427224338_AddUserToDb.cs" Line="108" Column="42" />
+      <File FileName="Gummi/Views/Reviews/Create.cshtml" Line="19" Column="42" />
+      <File FileName="Gummi/Models/Review.cs" Line="18" Column="9" />
+      <File FileName="Gummi/Views/Reviews/Details.cshtml" Line="21" Column="1" />
+      <File FileName="Gummi/Views/Reviews/Edit.cshtml" Line="12" Column="2" />
+      <File FileName="Gummi/Views/Reviews/Index.cshtml" Line="26" Column="65" />
+      <File FileName="Gummi/Views/Users/Create.cshtml" Line="24" Column="1" />
+      <File FileName="Gummi/Models/User.cs" Line="18" Column="63" />
+      <File FileName="Gummi/Views/Users/Delete.cshtml" Line="18" Column="1" />
+      <File FileName="Gummi/Views/Users/Details.cshtml" Line="12" Column="9" />
+      <File FileName="Gummi/Views/Users/Edit.cshtml" Line="18" Column="1" />
+      <File FileName="Gummi/Views/Users/Index.cshtml" Line="39" Column="5" />
+      <File FileName="Gummi/Controllers/UsersController.cs" Line="38" Column="18" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">

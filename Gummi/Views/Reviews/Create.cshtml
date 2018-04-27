@@ -8,12 +8,16 @@
 <h2>Create a new Review</h2>
 <hr />
 
+<!--
+HOW DOES IT GET ITS USER ID???
+-->
+
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Place)<br />
-    @Html.EditorFor(model => model.Place)<br />
-    @Html.LabelFor(model => model.Details)<br />
-    @Html.EditorFor(model => model.Details)<br />
+    @Html.LabelFor(model => model.Content)<br />
+    @Html.EditorFor(model => model.Content)<br />
+    @Html.LabelFor(model => model.Rating)<br />
+    @Html.EditorFor(model => model.Rating)<br />
 
     <input type="submit" value="Create" class="btn btn-default" />
 

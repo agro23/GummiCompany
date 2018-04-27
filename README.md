@@ -59,12 +59,12 @@ I will use a mock database for testing controller and model functions before usi
 
 The site will include the following functionality and their corresponding tests:
 
-* Fully functioning Product model with tests for:
+* Fully functioning Product model with tests for: - X
 	- The constructor
 	- Equals()
 	- Method for returning an average rating
 
-* Fully functioning Review model with tests for:
+* Fully functioning Review model with tests for: - X
 	- The constructor
 	- Equals()
 	- Method for checking if rating is between 1-5,
@@ -121,10 +121,9 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 * UPDATE: 4/27 -- User Controller
 
+* UPDATE: 4/27 -- User View
 
-* UPDATE: 4/27 -- User View <------------------------------------
-
-* UPDATE: 4/27 -- User one-to-many on Reviews?
+* UPDATE: 4/27 -- User one-to-many on Reviews? <------------------------------------
 
 * Model testing with mock database
 	- UPDATE: 4/27 -- Product Model Tests _(1/3)_
@@ -132,6 +131,8 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 	- UPDATE: 4/27 -- User Model Tests _(0/3)_
 		* User tests will include object Existence, Equals, and a Method
 
+
+		
 * Controller Testing with mock database
 
 * Models and Controllers work
