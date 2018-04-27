@@ -1,0 +1,15 @@
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/bin/Debug/netcoreapp1.1/Gummi.Tests.deps.json
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/bin/Debug/netcoreapp1.1/Gummi.Tests.runtimeconfig.json
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/bin/Debug/netcoreapp1.1/Gummi.Tests.runtimeconfig.dev.json
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/bin/Debug/netcoreapp1.1/Gummi.Tests.dll
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/bin/Debug/netcoreapp1.1/Gummi.Tests.pdb
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/bin/Debug/netcoreapp1.1/Gummi.dll
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/bin/Debug/netcoreapp1.1/Gummi.pdb
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/obj/Debug/netcoreapp1.1/Gummi.Tests.csprojResolveAssemblyReference.cache
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/obj/Debug/netcoreapp1.1/Gummi.Tests.csproj.CoreCompileInputs.cache
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/obj/Debug/netcoreapp1.1/Gummi.Tests.AssemblyInfo.cs
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/obj/Debug/netcoreapp1.1/Gummi.Tests.dll
+/Users/Guest/Desktop/GummiCompany/Gummi.Tests/obj/Debug/netcoreapp1.1/Gummi.Tests.pdb

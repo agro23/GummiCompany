@@ -122,17 +122,15 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 * UPDATE: 4/27 -- User Controller
 
 
-* UPDATE: 4/27 -- User View <--
+* UPDATE: 4/27 -- User View <------------------------------------
 
 * UPDATE: 4/27 -- User one-to-many on Reviews?
 
-* UPDATE: 4/27 -- Validate Form inputs?
-
-* UPDATE: 4/27 --
-
-* UPDATE: 4/27 --
-
 * Model testing with mock database
+	- UPDATE: 4/27 -- Product Model Tests _(1/3)_
+	- UPDATE: 4/27 -- Review Model Tests _(0/4)_
+	- UPDATE: 4/27 -- User Model Tests _(0/3)_
+		* User tests will include object Existence, Equals, and a Method
 
 * Controller Testing with mock database
 
@@ -143,6 +141,8 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 * Add Views
 
 * MVC working
+
+* UPDATE: 4/27 -- Validate Form inputs?
 
 * Layout is present for styling
 

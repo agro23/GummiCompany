@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gummi.Tests", "Gummi.Tests\Gummi.Tests.csproj", "{5ED9E0C4-5917-4652-A105-95989F6607D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,12 @@ Global
 		{F49D2744-64E6-41D2-9672-35ED8AB2F103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F49D2744-64E6-41D2-9672-35ED8AB2F103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F49D2744-64E6-41D2-9672-35ED8AB2F103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED9E0C4-5917-4652-A105-95989F6607D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED9E0C4-5917-4652-A105-95989F6607D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED9E0C4-5917-4652-A105-95989F6607D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED9E0C4-5917-4652-A105-95989F6607D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5ED9E0C4-5917-4652-A105-95989F6607D4} = {4F5738E4-8856-48CE-9DEA-37332D12FCC9}
 	EndGlobalSection
 EndGlobal

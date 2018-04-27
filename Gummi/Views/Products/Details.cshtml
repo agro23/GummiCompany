@@ -11,3 +11,28 @@
 <p>@Html.DisplayNameFor(model => model.Description) : @Html.DisplayFor(model => model.Description)</p>
 
 <p>@Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) | @Html.ActionLink("Back to Products", "Index")</p>
+<br>
+<br>
+<!-- ************************************************************************************ 
+HOW AM I GETTING THE MODEL IN HERE??? WITH VIEWBAG??? HOW???
+AT-model IEnumerable<Gummi.Models.Reviews>
+
+<h4>REVIEWS:</h4>
+HOW AM I LINKING TO THIS REVIEW DETAILS???
+    <ul>
+        AT-foreach(var listReview in Model)
+        {
+            <li>
+                AT-Html.DisplayFor(modelReview => listReview.Rating) |
+                AT-Html.DisplayFor(modelReview => listReview.Author) <br><br>
+                AT-Html.DisplayFor(modelReview => listReview.Content) <br>
+
+           </li>
+        
+        }
+    </ul>
+     <p>AT-Html.ActionLink("Add a Review to this product", "ProductReview")</p> 
+
+***************************************************************************************** -->
+
+<p>Add a Review</p>

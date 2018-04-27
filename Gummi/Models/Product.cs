@@ -18,5 +18,13 @@ namespace Gummi.Models
         public string Description { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
 
+        //override Equals here. Should just get into that habit.
+
+        public int getAverageRating (){
+            Console.WriteLine("This will average all of the ratings from all of the reviews, right?");
+            var average = 3; // just the test rating for now
+            return average;
+        }
+
     }
 }

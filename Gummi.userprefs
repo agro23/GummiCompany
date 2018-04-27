@@ -1,5 +1,25 @@
 ﻿<Properties StartupConfiguration="{F49D2744-64E6-41D2-9672-35ED8AB2F103}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gummi/Models/Product.cs">
+    <Files>
+      <File FileName="Gummi.Tests/ModelTests/UserTests.cs" Line="24" Column="2" />
+      <File FileName="Gummi.Tests/ModelTests/ReviewTests.cs" Line="13" Column="22" />
+      <File FileName="Gummi.Tests/ModelTests/ProductTests.cs" Line="18" Column="41" />
+      <File FileName="Gummi/Models/Product.cs" Line="19" Column="65" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Gummi" expanded="True" selected="True">
+            <Node name="Solution Items" expanded="True">
+              <Node name="Gummi.Tests" expanded="True">
+                <Node name="Gummi" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
