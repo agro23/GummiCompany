@@ -105,15 +105,32 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 * Data Models are created
 
-* UPDATE: 4/27 -- add properties to Product models <-- 
+* UPDATE: 4/27 -- add properties to Product models
 
 * UPDATE: 4/27 -- add Reviews model
 
-* CRUD
-
-* UPDATE: 4/27 -- create one-to-many relationship between Reviews and Products
+* CRUD for Products
 
 * UPDATE: 4/27 -- create CRUD for Reviews
+
+* **UPDATE: 4/27 -- create one-to-many relationship between Reviews and Products**
+
+* UPDATE: 4/27 -- Add User Model
+
+* UPDATE: 4/27 -- User CRUD
+
+* UPDATE: 4/27 -- User Controller
+
+
+* UPDATE: 4/27 -- User View <--
+
+* UPDATE: 4/27 -- User one-to-many on Reviews?
+
+* UPDATE: 4/27 -- Validate Form inputs?
+
+* UPDATE: 4/27 --
+
+* UPDATE: 4/27 --
 
 * Model testing with mock database
 
@@ -135,7 +152,7 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 ## Methodology and Comments
 
-I'm starting out with the travel blog website as my example template because it is constructed to be a blog. I will adapt Experiences into Blog entries, People as Users and places as Products. Once CRUD is up and running I will experiment with styles then move on to separating Admins from Users. Lastly I will implement tests as I learn them next week and the refactor the code and polish the UI as applicible.
+I'm starting out with the travel blog website as my example template because it is constructed to be a blog. I will adapt Experiences into Blog entries, People as Users and places as Products. Once CRUD is up and running I will experiment with styles then move on to separating Admins from Users. Lastly I will implement tests as I learn them next week and the refactor the code and polish the UI as applicable.
 
 ## Technologies Used
 
