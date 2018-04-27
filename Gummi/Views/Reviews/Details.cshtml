@@ -1,0 +1,13 @@
+﻿@model Gummi.Models.Review
+
+@{
+    ViewData["Title"] = "Review - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Review Details</h2>
+<hr />
+
+<p>@Html.DisplayNameFor(model => model.Place) : @Html.DisplayFor(model => model.Place)</p>
+<p>@Html.DisplayNameFor(model => model.Details) : @Html.DisplayFor(model => model.Details)</p>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.ReviewId }) | @Html.ActionLink("Back to Reviews", "Index")</p>

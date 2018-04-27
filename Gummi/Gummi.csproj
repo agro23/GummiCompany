@@ -17,6 +17,7 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="Views\Products\" />
     <Folder Include="Migrations\" />
+    <Folder Include="Views\Reviews\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿@model Gummi.Models.Product
 
 @{
-    ViewData["Title"] = "Location - Create";
+    ViewData["Title"] = "Product - Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,6 +12,8 @@
 {
     @Html.LabelFor(model => model.Name)<br />
     @Html.EditorFor(model => model.Name)<br />
+    @Html.LabelFor(model => model.Cost)<br />
+    @Html.EditorFor(model => model.Cost)<br />
     @Html.LabelFor(model => model.Description)<br />
     @Html.EditorFor(model => model.Description)<br />
 
