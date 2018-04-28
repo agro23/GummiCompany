@@ -10,7 +10,8 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Place)
+            <h3>THIS SHOULD BE THE AUTHOR</h3>
+            @Html.DisplayNameFor(model => model.ReviewId)
         </th>
         <th></th>
     </tr>
@@ -18,8 +19,8 @@
 
         {
            <tr>
-               <td> @Html.DisplayFor(modelDivision => listReview.Place)</td>
-
+               <td> @Html.DisplayFor(modelDivision => listReview.reviewId)</td>
+    
                <td>
                    @Html.ActionLink("Edit", "Edit", new { id = listReview.ReviewId }) |
                    @Html.ActionLink("Details", "Details", new { id = listReview.ReviewId }) |
@@ -33,3 +34,5 @@
 </table>
 
 @Html.ActionLink("Create new Review", "Create")
+
+
