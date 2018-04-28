@@ -132,7 +132,7 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 		* User tests will include object Existence, Equals, and a Method
 
 
-		
+
 * Controller Testing with mock database
 
 * Models and Controllers work
@@ -153,7 +153,7 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 ## Methodology and Comments
 
-I'm starting out with the travel blog website as my example template because it is constructed to be a blog. I will adapt Experiences into Blog entries, People as Users and places as Products. Once CRUD is up and running I will experiment with styles then move on to separating Admins from Users. Lastly I will implement tests as I learn them next week and the refactor the code and polish the UI as applicable.
+I started with the travel blog website as my example template because it is constructed to be a blog. I adapted the Experiences/Locations/People into individual models for Users, Reviews, and Products but they ended up having no relation to their originators from the Travel site. I got CRUD up and running and did some work with styles the first week and I started some tests during this second week. Unfortunately I ran into migration errors that have eaten into my time. I will complete the project during the upcoming week. I still have to implement user sign up, adding reviews to products, seeing the top three products on the site's landing page, and a few other things.
 
 ## Technologies Used
 
@@ -174,11 +174,11 @@ TBD
 TBD
 
 ## Future expansion
-TBD
+ There is room to separate the Admins from Users. There are always more tests that can be run. Also I'd like to implement a more clean method of showing the reviews. I'd like to do authentication too at some point.
 
 ## Known Bugs and Issues
 
-There are no known bugs or issues at this time.
+There are no known bugs or issues at this time other than the program not fulfilling its function with reviews attached to products and users can't log in.
 
 ## Support and contact details
 
