@@ -1,4 +1,4 @@
-﻿@model Gummi.Models.Review
+﻿@*@model Gummi.Models.Review
 
 @{
     ViewData["Title"] = "Review - Create";
@@ -7,10 +7,6 @@
 
 <h2>Create a new Review</h2>
 <hr />
-
-<!--
-HOW DOES IT GET ITS USER ID???
--->
 
 @using (Html.BeginForm())
 {
@@ -24,3 +20,55 @@ HOW DOES IT GET ITS USER ID???
 }
 
 @Html.ActionLink("Back to Reviews", "Index")
+
+*@
+
+
+
+@model Gummi.Models.Review
+@{
+    ViewData["Title"] = "Review Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+@*
+public int ReviewId { get; set; }
+        public string Author { get; set; }
+        public string Content { get; set; }
+        public int Rating { get; set; }
+
+*@
+    <form asp-action="Create">
+        <div class="create-form">
+            <h4>Write a Review</h4>
+            <hr />
+            <input type="hidden" asp-for="ProductId" value="@Model.ProductId"/>
+
+            <div class="form-group">
+                <label asp-for="Author" class="col-md-2 "></label>
+                <div class="col-md-10">
+                    <input asp-for="Author" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="col-md-2 "></label>
+                <div class="col-md-10">
+                    <input asp-for="Content" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rating" class="col-md-2 "></label>
+                <div class="col-md-10">
+                    <input asp-for="Rating" class="form-control" type="number" min="1" max="5" />
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </form>
+    <div>
+        <a asp-controller="Product" asp-action="Details">Back to List</a>
+    </div>
+</body>

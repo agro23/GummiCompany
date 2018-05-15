@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Gummi.Migrations
 {
-    public partial class WhatTheHellIsGoingOnHereReally : Migration
+    public partial class TryToFixReview : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,6 +28,7 @@ namespace Gummi.Migrations
                 {
                     ProductId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGeneratedOnAdd", true),
+                    Cost = table.Column<int>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true)
                 },
@@ -35,6 +36,19 @@ namespace Gummi.Migrations
                 {
                     table.PrimaryKey("PK_Products", x => x.ProductId);
                 });
+
+            //migrationBuilder.CreateTable(
+                //name: "Users",
+                //columns: table => new
+                //{
+                //    UserId = table.Column<int>(nullable: false)
+                //        .Annotation("MySql:ValueGeneratedOnAdd", true),
+                //    Name = table.Column<string>(nullable: true)
+                //},
+                //constraints: table =>
+                //{
+                //    table.PrimaryKey("PK_Users", x => x.UserId);
+                //});
 
             migrationBuilder.CreateTable(
                 name: "Experiences",
@@ -57,10 +71,49 @@ namespace Gummi.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Reviews",
+                columns: table => new
+                {
+                    ReviewId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGeneratedOnAdd", true),
+                    Author = table.Column<string>(nullable: true),
+                    Content = table.Column<string>(nullable: true),
+                    ProductId = table.Column<int>(nullable: false),
+                    Rating = table.Column<int>(nullable: false),
+                    //UserId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reviews", x => x.ReviewId);
+                    table.ForeignKey(
+                        name: "FK_Reviews_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "ProductId",
+                        onDelete: ReferentialAction.Cascade);
+                    //table.ForeignKey(
+                        //name: "FK_Reviews_Users_UserId",
+                        //column: x => x.UserId,
+                        //principalTable: "Users",
+                        //principalColumn: "UserId",
+                        //onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Experiences_LocationId",
                 table: "Experiences",
                 column: "LocationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reviews_ProductId",
+                table: "Reviews",
+                column: "ProductId");
+
+            //migrationBuilder.CreateIndex(
+                //name: "IX_Reviews_UserId",
+                //table: "Reviews",
+                //column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -69,10 +122,16 @@ namespace Gummi.Migrations
                 name: "Experiences");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "Locations");
+
+            migrationBuilder.DropTable(
+                name: "Products");
+
+            //migrationBuilder.DropTable(
+                //name: "Users");
         }
     }
 }

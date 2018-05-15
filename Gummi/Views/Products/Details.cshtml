@@ -1,9 +1,12 @@
 ﻿@model Gummi.Models.Product
+@using Gummi.Models
 
 @{
     ViewData["Title"] = "Product - Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var count = 1;
 }
+<div class="infoGeneral">
 <h2>Product Details</h2>
 <hr />
 
@@ -13,14 +16,14 @@
 <p>@Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) | @Html.ActionLink("Back to Products", "Index")</p>
 <br>
 <br>
-<!-- ************************************************************************************ 
+
+@************************************************************************************ 
 HOW AM I GETTING THE MODEL IN HERE??? WITH VIEWBAG??? HOW???
-AT-model IEnumerable<Gummi.Models.Reviews>
 
 <h4>REVIEWS:</h4>
 HOW AM I LINKING TO THIS REVIEW DETAILS???
     <ul>
-        AT-foreach(var listReview in Model)
+        @foreach(var listReview in Model)
         {
             <li>
                 AT-Html.DisplayFor(modelReview => listReview.Rating) |
@@ -31,8 +34,62 @@ HOW AM I LINKING TO THIS REVIEW DETAILS???
         
         }
     </ul>
-     <p>AT-Html.ActionLink("Add a Review to this product", "ProductReview")</p> 
+     <p>@Html.ActionLink("Add a Review to this product", "ProductReview")</p> 
 
-***************************************************************************************** -->
 
-<p>Add a Review</p>
+     <p>Add a Review</p>
+
+****************************************************************************************@
+
+
+
+<div class="row">
+    <h2>@Model.Name</h2>
+    <h5>@Model.Description</h5>
+</div>
+<div class="row">
+    <div class="col-sm-7">
+        <h4>Product Reviews</h4>
+        <hr />
+        @if (Model.Reviews.Count() > 0)
+        {
+
+            foreach (var review in Model.Reviews)
+            {
+                <p>A review by: @review.Author</p>
+                <p>@review.Content</p>
+                if (count == 1)
+                {
+                    count++;
+                }
+                else
+                {
+                    <hr />
+                }
+            }
+        }
+        else
+        {
+            <p>There are no reviews for this post</p>
+
+        }
+    </div>
+</div>
+    
+<div class="row">
+    <div class="col-md-10">
+        <h4>Add A Review</h4>
+        <hr />
+        <form action="/Reviews/Create" method="post" class="form-group">
+            <input class="form-control" type="hidden" name="ProductId" value="@Model.ProductId" />
+           <input class="form-control" type="text" name="Author" placeholder="Your Name" /> 
+            <br />
+            <textarea class="form-control" name="Content" placeholder="Your Review"></textarea><br />
+            <input class="form-control" type="number" name="Rating" placeholder="1-5" /> 
+
+            <button class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</div>
+    
+</div>

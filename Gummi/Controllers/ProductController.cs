@@ -47,11 +47,21 @@ namespace Gummi.Controllers
             return RedirectToAction("Index");
         }
 
+        //public IActionResult Details(int id)
+        //{
+        //    var thisProduct = db.Products.FirstOrDefault(Products => Products.ProductId == id);
+        //    return View(thisProduct);
+        //}
+
         public IActionResult Details(int id)
         {
-            var thisProduct = db.Products.FirstOrDefault(Products => Products.ProductId == id);
+            Product thisProduct = db.Products.FirstOrDefault(y => y.ProductId == id);
+
+            thisProduct.Reviews = db.Reviews.Where(c => c.ProductId == id).ToList();
+
             return View(thisProduct);
         }
+
 
         public IActionResult Delete(int id)
         {

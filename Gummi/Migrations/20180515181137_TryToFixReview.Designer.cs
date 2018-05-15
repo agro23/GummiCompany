@@ -8,8 +8,8 @@ using Gummi.Models;
 namespace Gummi.Migrations
 {
     [DbContext(typeof(GummiDbContext))]
-    [Migration("20180427183605_TryAgainAndAgainAndAgain")]
-    partial class TryAgainAndAgainAndAgain
+    [Migration("20180515181137_TryToFixReview")]
+    partial class TryToFixReview
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,16 +73,32 @@ namespace Gummi.Migrations
 
                     b.Property<string>("Content");
 
-                    b.Property<int?>("ProductId");
+                    b.Property<int>("ProductId");
 
                     b.Property<int>("Rating");
+
+                    //b.Property<int?>("UserId");
 
                     b.HasKey("ReviewId");
 
                     b.HasIndex("ProductId");
 
+                    //b.HasIndex("UserId");
+
                     b.ToTable("Reviews");
                 });
+
+            //modelBuilder.Entity("Gummi.Models.User", b =>
+                //{
+                //    b.Property<int>("UserId")
+                //        .ValueGeneratedOnAdd();
+
+                //    b.Property<string>("Name");
+
+                //    b.HasKey("UserId");
+
+                //    b.ToTable("Users");
+                //});
 
             modelBuilder.Entity("Gummi.Models.Experience", b =>
                 {
@@ -94,9 +110,14 @@ namespace Gummi.Migrations
 
             modelBuilder.Entity("Gummi.Models.Review", b =>
                 {
-                    b.HasOne("Gummi.Models.Product")
+                    b.HasOne("Gummi.Models.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    //b.HasOne("Gummi.Models.User")
+                        //.WithMany("Reviews")
+                        //.HasForeignKey("UserId");
                 });
         }
     }

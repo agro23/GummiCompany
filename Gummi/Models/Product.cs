@@ -11,6 +11,8 @@ namespace Gummi.Models
     public class Product
     {
 
+        public Product() => this.Reviews = new HashSet<Review>();
+
         [Key]
         public int ProductId { get; set; }
         public string Name { get; set; }
@@ -18,12 +20,32 @@ namespace Gummi.Models
         public string Description { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
 
-        //override Equals here. Should just get into that habit.
+        public override bool Equals(System.Object obj)
+        {
+            if (!(obj is Product))
+            {
+                return false;
+            }
+            else
+            {
+                Product newProduct = (Product)obj;
+                return this.ProductId.Equals(newProduct.ProductId);
+            }
+        }
 
-        public int getAverageRating (){
-            Console.WriteLine("This will average all of the ratings from all of the reviews, right?");
-            var average = 3; // just the test rating for now
-            return average;
+        public override int GetHashCode()
+        {
+            return this.ProductId.GetHashCode();
+        }
+
+        public double getAveragRating()
+        {
+            List<int> average = new List<int>();
+            foreach (var review in Reviews)
+            {
+                average.Add(review.Rating);
+            }
+            return average.Average();
         }
 
     }

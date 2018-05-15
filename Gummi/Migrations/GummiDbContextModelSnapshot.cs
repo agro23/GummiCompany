@@ -72,32 +72,32 @@ namespace Gummi.Migrations
 
                     b.Property<string>("Content");
 
-                    b.Property<int?>("ProductId");
+                    b.Property<int>("ProductId");
 
                     b.Property<int>("Rating");
 
-                    b.Property<int?>("UserId");
+                    //b.Property<int?>("UserId");
 
                     b.HasKey("ReviewId");
 
                     b.HasIndex("ProductId");
 
-                    b.HasIndex("UserId");
+                    //b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("Gummi.Models.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd();
+            //modelBuilder.Entity("Gummi.Models.User", b =>
+                //{
+                //    b.Property<int>("UserId")
+                //        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                //    b.Property<string>("Name");
 
-                    b.HasKey("UserId");
+                //    b.HasKey("UserId");
 
-                    b.ToTable("Users");
-                });
+                //    b.ToTable("Users");
+                //});
 
             modelBuilder.Entity("Gummi.Models.Experience", b =>
                 {
@@ -109,13 +109,14 @@ namespace Gummi.Migrations
 
             modelBuilder.Entity("Gummi.Models.Review", b =>
                 {
-                    b.HasOne("Gummi.Models.Product")
+                    b.HasOne("Gummi.Models.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Gummi.Models.User")
-                        .WithMany("Reviews")
-                        .HasForeignKey("UserId");
+                    //b.HasOne("Gummi.Models.User")
+                        //.WithMany("Reviews")
+                        //.HasForeignKey("UserId");
                 });
         }
     }

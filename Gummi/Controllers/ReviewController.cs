@@ -20,17 +20,23 @@ namespace Gummi.Controllers
             return View(model);
         }
 
+        //[HttpPost]
+        //public IActionResult Create(Review review)
+        //{
+        //    db.Reviews.Add(review);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
         public IActionResult Create()
         {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Create(Review review)
-        {
-            db.Reviews.Add(review);
+            Review newReview = new Review(int.Parse(Request.Form["ProductId"]), Request.Form["Author"], Request.Form["Content"], int.Parse(Request.Form["Rating"]));
+            db.Reviews.Add(newReview);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Product", new { id = newReview.ProductId });
+            //return RedirectToAction("Details", "Product", newReview.ProductId);
+
+            //return View("Product/Details/", newReview.ProductId)
         }
 
         public IActionResult Edit(int id)

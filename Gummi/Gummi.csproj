@@ -53,7 +53,6 @@
     <Compile Remove="Migrations\20180420204927_EvolveIntoNewProgram.cs" />
     <Compile Remove="Migrations\20180420205545_TryToCreateAgain.Designer.cs" />
     <Compile Remove="Migrations\20180420205545_TryToCreateAgain.cs" />
-    <Compile Remove="Migrations\GummiDbContextModelSnapshot.cs" />
     <Compile Remove="Migrations\20180420235204_AddProductsToDb.Designer.cs" />
     <Compile Remove="Migrations\20180420235204_AddProductsToDb.cs" />
     <Compile Remove="Migrations\20180421000834_RemoveOneToManyForNow.Designer.cs" />
@@ -80,8 +79,14 @@
     <Compile Remove="20180427180526_UpdateProductsToMakeReviews.Designer.cs" />
     <Compile Remove="20180427181016_UpdateDbProductsAddReviews.cs" />
     <Compile Remove="20180427181016_UpdateDbProductsAddReviews.Designer.cs" />
+    <Compile Remove="Migrations\20180515181901_TryToFixItAll.Designer.cs" />
+    <Compile Remove="Migrations\20180515181901_TryToFixItAll.cs" />
+    <Compile Remove="Controllers\UsersController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Products\styles.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Products\styles.css" />
   </ItemGroup>
 </Project>

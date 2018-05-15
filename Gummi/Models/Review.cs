@@ -15,6 +15,20 @@ namespace Gummi.Models
         public string Author { get; set; }
         public string Content { get; set; }
         public int Rating { get; set; }
+        public int ProductId { get; set; }
+        public virtual Product Product { get; set; }
 
+        public Review(int productId, string author, string content, int rating)
+
+        {
+            ProductId = productId;
+            Author = author;
+            Content = content;
+            Rating = rating;
+        }
+
+        public Review()
+        {
+        }
     }
 }

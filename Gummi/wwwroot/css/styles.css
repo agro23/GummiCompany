@@ -8,7 +8,7 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover
+    background-size: cover;
 }
 
 div#footer {
@@ -22,22 +22,22 @@ div#footer {
 }
 
 .infoTop {
-    opacity: 0.75;
-    filter: alpha(opacity=75); /* For IE8 and earlier */
+    /*background-color: rgba(255,255,255,.75);*/
     margin-top: 7%;
     text-align: center;
     padding: 1%;
-    font-size: 1.5em;
+    font-size: 1.5em
+
 }
 
 .infoGeneral {
-    opacity: 0.75;
-    filter: alpha(opacity=75); /* For IE8 and earlier */
+    /* opacity: 0.75;
+    filter: alpha(opacity=75);  For IE8 and earlier */
+    background-color: rgba(255,255,255,.75);
     margin-top: 10px;
     text-align: center;
     padding: 1%;
-    font-size: 1em;
-
+    font-size: 1em
 }
 .decoratedEdges {
     border-radius: 25px;

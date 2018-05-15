@@ -1,6 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<Gummi.Models.Product>
 @{
     ViewData["Title"] = "Gummi Bear Kingdom";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,6 +17,7 @@
         <br>
         <p>This is yet even more text. And we haven't even gotten to columns yet.</p>
     </div>
+            
     <div class="panel-row infoGeneral top-3">
         <h2>Our Most Popluar Products:</h2>
         <br>
@@ -34,12 +33,56 @@
                 <div class="col-md-3">PRODUCT PICTURE</div>
                 <div class="col-md-9">PRODUCT 3 INFO & LINK</div>
            </div>
-        <br>     
-        <p class="panel-row">This is our two columns of top 3 products</p>
+            @*<div>    
+            @foreach (var item in Model)
+            {
+            <div class="well">
+                <h3>
+                    Name: @Html.DisplayFor(modelItem => item.Name)
+                </h3>
+                <h4>
+                    Cost: @Html.DisplayFor(modelItem => item.Cost)
+                </h4>
+                <h4>
+                    Description: @Html.DisplayFor(modelItem => item.Description)
+                </h4>
+                <h4>
+                    Average rating: @String.Format("{0:N2}", @item.RatingsAverage())
+                </h4>
+                @Html.ActionLink("Details", "Details","Products", new { id = @item.ProductId })
+            </div>
+             }*@
+        <br>
     </div>
+        @*<p class="panel-row">This is our two columns of top 3 products</p>*@
+
     <div class="panel-row infoGeneral">
         <br>
         <p>Link to the Products page goes here.</p>
     </div>
 
  </div>
+
+        @*
+        @foreach (var item in Model)
+{
+<div class="well">
+    <h3>
+        Name: @Html.DisplayFor(modelItem => item.Name)
+    </h3>
+    <h4>
+        Cost: @Html.DisplayFor(modelItem => item.Cost)
+    </h4>
+    <h4>
+        Description: @Html.DisplayFor(modelItem => item.Description)
+    </h4>
+    <h4>
+        Average rating: @String.Format("{0:N2}", @item.AverageRating())
+    </h4>
+    @Html.ActionLink("Details", "Details","Products", new { id = @item.ProductId })
+</div>
+}
+        *@
+
+
+       
