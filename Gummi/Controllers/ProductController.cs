@@ -79,3 +79,23 @@ namespace Gummi.Controllers
         }
     }
 }
+
+
+     /*
+
+
+List<Product> products = db.Products.Include(p => p.Reviews).ToList();
+List<Product> sortedProducts = products.OrderByDescending(p => p.AverageRating()).ToList();
+if (sortedProducts.Count >= 3)
+    {
+        List<Product> topThree = new List<Product> { sortedProducts[0], sortedProducts[1], sortedProducts[2] };
+        return View(topThree);
+    }
+else
+    {
+        return View(sortedProducts);
+    }
+
+
+
+*/

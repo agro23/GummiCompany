@@ -33,7 +33,7 @@ namespace Gummi.Controllers
             Review newReview = new Review(int.Parse(Request.Form["ProductId"]), Request.Form["Author"], Request.Form["Content"], int.Parse(Request.Form["Rating"]));
             db.Reviews.Add(newReview);
             db.SaveChanges();
-            return RedirectToAction("Details", "Product", new { id = newReview.ProductId });
+        return RedirectToAction("Details", "Products", new { id = newReview.ProductId });
             //return RedirectToAction("Details", "Product", newReview.ProductId);
 
             //return View("Product/Details/", newReview.ProductId)
