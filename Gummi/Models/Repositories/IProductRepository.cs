@@ -39,6 +39,7 @@ namespace Gummi.Models.Repositories
 {
     public interface IProductRepository
     {
+        //Product Index(Product product);
         IQueryable<Product> Products { get; }
         Product Save(Product product);
         Product Edit(Product product);

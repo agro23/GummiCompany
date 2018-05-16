@@ -9,17 +9,31 @@ namespace Gummi.Models.Repositories
 {
     public class EFReviewRepository : IReviewRepository
     {
-        GummiDbContext db = new GummiDbContext();
+        //GummiDbContext db = new GummiDbContext();
         private GummiDbContext GummiDbContext;
 
-        public EFReviewRepository(GummiDbContext GummiDbContext)
-        {
-            this.GummiDbContext = GummiDbContext;
-        }
+        //public EFReviewRepository(GummiDbContext GummiDbContext)
+        //{
+        //    this.GummiDbContext = GummiDbContext;
+        //}
 
+        //public EFReviewRepository()
+        //{
+        //}
+
+        GummiDbContext db;
         public EFReviewRepository()
         {
+            db = new GummiDbContext();
         }
+
+        public EFReviewRepository(GummiDbContext thisDb)
+        {
+            db = thisDb;
+        }
+
+
+
 
         public IQueryable<Review> Reviews
         { get { return db.Reviews; } }

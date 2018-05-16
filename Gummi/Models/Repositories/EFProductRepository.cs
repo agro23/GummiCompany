@@ -10,18 +10,39 @@ namespace Gummi.Models.Repositories
 {
     public class EFProductRepository : IProductRepository
     {
-        GummiDbContext db = new GummiDbContext();
+        //GummiDbContext db = new GummiDbContext();
         private GummiDbContext GummiDbContext;
 
-        public EFProductRepository(GummiDbContext GummiDbContext)
-        {
-            this.GummiDbContext = GummiDbContext;
-        }
+        //public EFProductRepository(GummiDbContext GummiDbContext)
+        //{
+        //    this.GummiDbContext = GummiDbContext;
+        //}
 
+
+
+        GummiDbContext db;
         public EFProductRepository()
         {
+            db = new GummiDbContext();
+        }
+        public EFProductRepository(GummiDbContext thisDb)
+        {
+            db = thisDb;
         }
 
+
+
+
+
+        //public EFProductRepository()
+        //{
+        //}
+
+        //public Product Index(Product product) // ADDED THIS
+        //{
+        //    return product;
+        //}
+        
         public IQueryable<Product> Products
         { get { return db.Products; } }
 

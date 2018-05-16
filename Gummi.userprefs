@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{F49D2744-64E6-41D2-9672-35ED8AB2F103}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gummi/Views/Reviews/Details.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gummi/appsettings.json">
     <Files>
-      <File FileName="Gummi/Models/Review.cs" Line="19" Column="53" />
-      <File FileName="Gummi/Models/Product.cs" Line="72" Column="1" />
+      <File FileName="Gummi/Models/Review.cs" Line="47" Column="42" />
+      <File FileName="Gummi/Models/Product.cs" Line="50" Column="1" />
       <File FileName="Gummi/Controllers/ProductController.cs" Line="10" Column="1" />
       <File FileName="Gummi/Views/Products/Details.cshtml" Line="23" Column="18" />
       <File FileName="Gummi/Views/Reviews/Create.cshtml" Line="65" Column="21" />
@@ -10,18 +10,20 @@
       <File FileName="Gummi/Views/Home/Index.cshtml" Line="50" Column="64" />
       <File FileName="Gummi/Controllers/HomeController.cs" Line="19" Column="37" />
       <File FileName="Gummi/Views/Products/Index.cshtml" Line="37" Column="48" />
-      <File FileName="Gummi.Tests/ControllerTests/ProductControllerTests.cs" Line="149" Column="25" />
-      <File FileName="Gummi.Tests/ModelTests/ReviewTests.cs" Line="2" Column="1" />
-      <File FileName="Gummi.Tests/ModelTests/ProductTests.cs" Line="31" Column="13" />
+      <File FileName="Gummi.Tests/ControllerTests/ProductControllerTests.cs" Line="19" Column="1" />
+      <File FileName="Gummi.Tests/ModelTests/ReviewTests.cs" Line="37" Column="42" />
+      <File FileName="Gummi.Tests/ModelTests/ProductTests.cs" Line="63" Column="12" />
       <File FileName="Gummi/Models/Repositories/IProductRepository.cs" Line="45" Column="23" />
       <File FileName="Gummi/Models/Repositories/EFProductRepository.cs" Line="46" Column="10" />
-      <File FileName="Gummi/Models/GummiDbContext.cs" Line="41" Column="1" />
-      <File FileName="Gummi.Tests/ModelTests/GummiTestDbContext.cs" Line="27" Column="62" />
-      <File FileName="Gummi.Tests/ControllerTests/ReviewControllerTests.cs" Line="148" Column="56" />
+      <File FileName="Gummi/Models/GummiDbContext.cs" Line="26" Column="5" />
+      <File FileName="Gummi.Tests/ModelTests/GummiTestDbContext.cs" Line="30" Column="56" />
+      <File FileName="Gummi.Tests/ControllerTests/ReviewControllerTests.cs" Line="113" Column="1" />
       <File FileName="Gummi/Models/Repositories/EFReviewRepository.cs" Line="32" Column="10" />
       <File FileName="Gummi/Models/Repositories/IReviewRepository.cs" Line="21" Column="1" />
-      <File FileName="Gummi/appsettings.json" Line="7" Column="1" />
       <File FileName="Gummi/Views/Reviews/Details.cshtml" Line="1" Column="1" />
+      <File FileName="Gummi/Startup.cs" Line="1" Column="1" />
+      <File FileName="Gummi/Program.cs" Line="1" Column="1" />
+      <File FileName="Gummi/appsettings.json" Line="7" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
@@ -33,6 +35,9 @@
                   <Node name="Tests" expanded="True">
                     <Node name="ControllerTests" expanded="True">
                       <Node name="ProductControllerTest" expanded="True" />
+                      <Node name="ReviewsControllerTest" expanded="True">
+                        <Node name="DB_CreatesNewEntries_Collection" selected="True" />
+                      </Node>
                     </Node>
                     <Node name="ModelTests" expanded="True" />
                   </Node>

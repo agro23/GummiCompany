@@ -18,7 +18,7 @@ namespace Gummi.Tests.ControllerTests
     {
 
         Mock<IProductRepository> mock = new Mock<IProductRepository>();
-        EFProductRepository db = new EFProductRepository(new GummiDbContext());
+        EFProductRepository db = new EFProductRepository(new GummiTestDbContext());
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -35,6 +35,10 @@ namespace Gummi.Tests.ControllerTests
             new Product {ProductId = 2, Name = "Gummy Shoe", Cost = 13, Description = "A yummy shoe" },
             new Product {ProductId = 3, Name = "Gummy Iron", Cost = 14, Description = "A jiggly iron" }
             }.AsQueryable());
+            //ViewResult indexView = new ProductsController(mock.Object).Index() as ViewResult;
+            ViewResult indexView = new ProductsController(mock.Object).Index() as ViewResult;
+
+
         }
 
         //public void Dispose()
@@ -42,6 +46,39 @@ namespace Gummi.Tests.ControllerTests
         //    mock.Object.RemoveAll();
         //    db.RemoveAll();
         //}
+
+        //[TestMethod]
+        //public void ProductsController_IndexModelContainsCorrectData_List()
+        //{
+        //    //Arrange
+        //    SetUpTheMockDb();
+
+        //    ProductsController controller = new ProductsController(db);
+        //    IActionResult actionResult = controller.Index();
+        //    ViewResult indexView = controller.Index() as ViewResult;
+
+        //    //Act
+        //    var result = indexView.ViewData.Model;
+
+        //    //Assert
+        //    Assert.IsInstanceOfType(result, typeof(List<Product>));
+        //}
+
+
+        [TestMethod]
+        public void ProductsController_IndexModelContainsCorrectData_List()
+        {
+            //Arrange
+            SetUpTheMockDb();
+            ViewResult indexView = new ProductsController(mock.Object).Index() as ViewResult;
+
+            //Act
+            var result = indexView.ViewData.Model;
+
+            //Assert
+            Assert.IsInstanceOfType(result, typeof(List<Product>));
+        }
+
 
         [TestMethod]
         public void Mock_GetViewResultIndex_ActionResult()
@@ -57,19 +94,7 @@ namespace Gummi.Tests.ControllerTests
             Assert.IsInstanceOfType(result, typeof(ActionResult));
         }
 
-        [TestMethod]
-        public void ProductsController_IndexModelContainsCorrectData_List()
-        {
-            //Arrange
-            SetUpTheMockDb();
-            ViewResult indexView = new ProductsController(mock.Object).Index() as ViewResult;
 
-            //Act
-            var result = indexView.ViewData.Model;
-
-            //Assert
-            Assert.IsInstanceOfType(result, typeof(List<Product>));
-        }
 
         [TestMethod]
         public void Mock_IndexModelContainsProduct_Collection()
@@ -114,7 +139,9 @@ namespace Gummi.Tests.ControllerTests
         public void ProductController_AddsProductToIndexModelData_Collection()
         {
             // Arrange
-            ProductsController controller = new ProductsController();
+            SetUpTheMockDb();
+
+            ProductsController controller = new ProductsController(mock.Object);
             Product testProduct = new Product();
             testProduct.Description = "test product";
 
@@ -131,7 +158,7 @@ namespace Gummi.Tests.ControllerTests
         public void ProductController_IndexModelContainsCorrectData_List()
         {
             //Arrange
-            ProductsController controller = new ProductsController();
+            ProductsController controller = new ProductsController(mock.Object);
             IActionResult actionResult = controller.Index();
             ViewResult indexView = controller.Index() as ViewResult;
 
@@ -143,43 +170,44 @@ namespace Gummi.Tests.ControllerTests
         }
 
 
-        //[TestMethod]
-        //public void Mock_GetDetails_ReturnsView()
-        //{
-        //    // Arrange
-        //    Product testProduct = new Product
-        //    {
-        //        ProductId = 1,
-        //        Name = "Gummi Bear"
-        //    };
+        [TestMethod]
+        public void Mock_GetDetails_ReturnsView()
+        {
+            // Arrange
+            Product testProduct = new Product
+            {
+                ProductId = 1,
+                Name = "Gummi Bear"
+            };
 
-        //    SetUpTheMockDb();
-        //    ProductsController controller = new ProductsController(mock.Object);
+            SetUpTheMockDb();
+            ProductsController controller = new ProductsController(mock.Object);
 
-        //    // Act
-        //    var resultView = controller.Details(testProduct.ProductId) as ViewResult;
-        //    var model = resultView.ViewData.Model as Product;
+            // Act
+            var resultView = controller.Details(testProduct.ProductId) as ViewResult;
+            var model = resultView.ViewData.Model as Product;
 
-        //    // Assert
-        //    Assert.IsInstanceOfType(resultView, typeof(ViewResult));
-        //    Assert.IsInstanceOfType(model, typeof(Product));
-        //}
+            // Assert
+            Assert.IsInstanceOfType(resultView, typeof(ViewResult));
+            Assert.IsInstanceOfType(model, typeof(Product));
+        }
 
-        //[TestMethod]
-        //public void DB_CreatesNewEntries_Collection()
-        //{
-        //    // Arrange
-        //    ProductsController controller = new ProductsController(db);
-        //    Product testProduct = new Product();
-        //    testProduct.Name = "Gummi Bear";
+        [TestMethod]
+        public void DB_CreatesNewEntries_Collection()
+        {
+            // Arrange
+            SetUpTheMockDb();
+            ProductsController controller = new ProductsController(mock.Object);
+            Product testProduct = new Product();
+            testProduct.Name = "Gummi Bear";
 
-        //    // Act
-        //    controller.Create(testProduct);
-        //    var collection = (controller.Index() as ViewResult).ViewData.Model as List<Product>;
+            // Act
+            controller.Create(testProduct);
+            var collection = (controller.Index() as ViewResult).ViewData.Model as List<Product>;
 
-        //    // Assert
-        //    CollectionAssert.Contains(collection, testProduct);
-        //}
+            // Assert
+            CollectionAssert.Contains(collection, testProduct);
+        }
 
 
     }

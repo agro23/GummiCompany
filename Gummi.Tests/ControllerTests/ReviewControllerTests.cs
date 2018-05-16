@@ -18,7 +18,7 @@ namespace Gummi.Tests.ControllerTests
     {
 
         Mock<EFReviewRepository> mock = new Mock<EFReviewRepository>();
-        EFReviewRepository db = new EFReviewRepository(new GummiDbContext());
+        EFReviewRepository db = new EFReviewRepository(new GummiTestDbContext());
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -55,7 +55,7 @@ namespace Gummi.Tests.ControllerTests
         //public void Mock_GetViewResultIndex_ActionResult()
         //{
         //    //Arrange
-        //    Mock<EFReviewRepository> mock1 = new Mock<EFReviewRepository>();
+        //    Mock<IReviewRepository> mock1 = new Mock<IReviewRepository>();
         //    ReviewsController controller = new ReviewsController(mock1.Object);
 
         //    //Act
@@ -65,63 +65,83 @@ namespace Gummi.Tests.ControllerTests
         //    Assert.IsInstanceOfType(result, typeof(ActionResult));
         //}
 
-        //[TestMethod]
-        //public void ReviewsController_IndexModelContainsCorrectData_List()
-        //{
-        //    //Arrange
-        //    SetUpTheMockDb();;
-        //    ViewResult indexView = new ReviewsController(mock.Object).Index() as ViewResult;
 
-        //    //Act
-        //    var result = indexView.ViewData.Model;
+        [TestMethod]
+        public void Mock_GetViewResultIndex_ActionResult()
+        {
+            //Arrange
+            SetUpTheMockDb();
+            ReviewsController controller = new ReviewsController(mock.Object);
 
-        //    //Assert
-        //    Assert.IsInstanceOfType(result, typeof(List<Review>));
-        //}
+            //Act
+            var result = controller.Index();
 
-        //[TestMethod]
-        //public void Mock_IndexModelContainsReview_Collection() // Confirms presence of known entry
-        //{
-        //    // Arrange
-        //    SetUpTheMockDb();;
-        //    ReviewsController controller = new ReviewsController(mock.Object);
-        //    Review testReview = new Review();
-        //    testReview.Author = "Tester McTestFace";
-        //    testReview.ReviewId = 1;
-
-        //    // Act
-        //    ViewResult indexView = controller.Index() as ViewResult;
-        //    List<Review> collection = indexView.ViewData.Model as List<Review>;
-
-        //    // Assert
-        //    CollectionAssert.Contains(collection, testReview);
-        //}
+            //Assert
+            Assert.IsInstanceOfType(result, typeof(ActionResult));
+        }
 
 
-        //[TestMethod]
-        //public void Mock_PostViewResultCreate_ViewResult()
-        //{
-        //    // Arrange
-        //    Review testReview = new Review
-        //    {
-        //        ReviewId = 1,
-        //        Author = "Gummi Bear"
-        //    };
-
-        //    SetUpTheMockDb();
-        //    ReviewsController controller = new ReviewsController(mock.Object);
-
-        //    // Act
-        //    var resultView = controller.Create(testReview);
 
 
-        //    // Assert
-        //    Assert.IsInstanceOfType(resultView, typeof(RedirectToActionResult));
-
-        //}
 
 
-        //[TestMethod]
+        [TestMethod]
+        public void ReviewsController_IndexModelContainsCorrectData_List()
+        {
+            //Arrange
+            SetUpTheMockDb();;
+            ViewResult indexView = new ReviewsController(mock.Object).Index() as ViewResult;
+
+            //Act
+            var result = indexView.ViewData.Model;
+
+            //Assert
+            Assert.IsInstanceOfType(result, typeof(List<Review>));
+        }
+
+        [TestMethod]
+        public void Mock_IndexModelContainsReview_Collection() // Confirms presence of known entry
+        {
+            // Arrange
+            SetUpTheMockDb();
+            ReviewsController controller = new ReviewsController(mock.Object);
+            Review testReview = new Review();
+            testReview.Author = "Tester McTestFace";
+            testReview.ReviewId = 1;
+
+            // Act
+            ViewResult indexView = controller.Index() as ViewResult;
+            List<Review> collection = indexView.ViewData.Model as List<Review>;
+
+            // Assert
+            CollectionAssert.Contains(collection, testReview);
+        }
+
+
+        [TestMethod]
+        public void Mock_PostViewResultCreate_ViewResult()
+        {
+            // Arrange
+            Review testReview = new Review
+            {
+                ReviewId = 1,
+                Author = "Gummi Bear"
+            };
+
+            SetUpTheMockDb();
+            ReviewsController controller = new ReviewsController(mock.Object);
+
+            // Act
+            var resultView = controller.Create(testReview);
+
+
+            // Assert
+            Assert.IsInstanceOfType(resultView, typeof(RedirectToActionResult));
+
+        }
+
+
+        //[TestMethod] NOT USING DETAILS VIEW ANYMORE IT SHOWS ON PRODUCTS DETAILS
         //public void Mock_GetDetails_ReturnsView()
         //{
         //    // Arrange
@@ -144,21 +164,23 @@ namespace Gummi.Tests.ControllerTests
         //}
 
 
-        //[TestMethod]
-        //public void DB_CreatesNewEntries_Collection()
-        //{
-        //    // Arrange
-        //    ReviewsController controller = new ReviewsController(db);
-        //    Review testReview = new Review();
-        //    testReview.Author = "Gummi Bear";
+        [TestMethod]
+        public void DB_CreatesNewEntries_Collection()
+        {
+            // Arrange
+            SetUpTheMockDb();
 
-        //    // Act
-        //    controller.Create(testReview);
-        //    var collection = (controller.Index() as ViewResult).ViewData.Model as List<Review>;
+            ReviewsController controller = new ReviewsController(db);
+            Review testReview = new Review();
+            testReview.Author = "Gummi Bear";
 
-        //    // Assert
-        //    CollectionAssert.Contains(collection, testReview);
-        //}
+            // Act
+            controller.Create(testReview);
+            var collection = (controller.Index() as ViewResult).ViewData.Model as List<Review>;
+
+            // Assert
+            CollectionAssert.Contains(collection, testReview);
+        }
 
 
     }
