@@ -17,6 +17,9 @@ namespace Gummi.Controllers
         private GummiDbContext db = new GummiDbContext();
         private EFReviewRepository db1;
 
+        private IReviewRepository reviewRepo;  
+
+
         public ReviewsController(EFReviewRepository db1)
         {
             this.db1 = db1;
@@ -35,16 +38,28 @@ namespace Gummi.Controllers
             return View(model);
         }
 
+        public ReviewsController(IReviewRepository repo = null)
+        {
+            if (repo == null) // repo is not null
+            {
+                this.reviewRepo = new EFReviewRepository();
+            }
+            else
+            {
+                this.reviewRepo = repo;
+            }
+        }
 
 
 
-        //[HttpPost]
-        //public IActionResult Create(Review review)
-        //{
-        //    db.Reviews.Add(review);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+
+        [HttpPost]
+        public IActionResult Create(Review review)
+        {
+            db.Reviews.Add(review);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         public IActionResult Create()
         {

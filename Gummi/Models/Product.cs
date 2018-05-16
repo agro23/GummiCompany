@@ -51,12 +51,19 @@ namespace Gummi.Models
         public int getAverageRating()
         {
             List<int> average = new List<int>();
-            foreach (var review in Reviews)
+            if (Reviews.Count <= 0 ) 
             {
-                average.Add(review.Rating);
+                return 0;
+            }
+            else
+            {
+                foreach (var review in Reviews)
+                {
+                    average.Add(review.Rating);
+                }
+                return (int)Math.Round(average.Average()); // send back the average from the built-in Average method cast as a Rounded int    
             }
 
-            return (int)Math.Round(average.Average()); // send back the average from the built-in Average method cast as a Rounded int
         }
 
     }

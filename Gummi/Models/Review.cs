@@ -30,5 +30,24 @@ namespace Gummi.Models
         public Review()
         {
         }
+
+        public override bool Equals(System.Object obj)
+        {
+            if (!(obj is Review))
+            {
+                return false;
+            }
+            else
+            {
+                Review newReview = (Review)obj;
+                return this.ReviewId.Equals(newReview.ReviewId);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.ReviewId.GetHashCode();
+        }
+
     }
 }

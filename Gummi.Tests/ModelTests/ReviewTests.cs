@@ -27,16 +27,17 @@ namespace Gummi.Tests.ModelTests
             //Arrange
 
             // Make two Reviews
-            //Review review1 = new Review();
-            //Review review2 = new Review();
+            Review review1 = new Review();
+            Review review2 = new Review();
 
             //Act
 
             // Give each Review some property definitions
-
+            review1.Author = "Fred Derf";
+            review2.Author = "Fred Derf";
             //Assert
 
-            // Assert.AreEqual(review1, review2);
+             Assert.AreEqual(review1, review2);
         }
 
         [TestMethod]

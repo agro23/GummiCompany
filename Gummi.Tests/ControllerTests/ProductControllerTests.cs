@@ -1,42 +1,4 @@
-﻿//// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
-//        [TestMethod]
-//        public void ProductController_AddsProductToIndexModelData_Collection()
-//        {
-//            // Arrange
-//            ProductController controller = new ProductController();
-//            Product testProduct = new Product();
-//            testProduct.Description = "test product";
-
-//            // Act
-//            controller.Create(testProduct);
-//            ViewResult indexView = new ProductController().Index() as ViewResult;
-//            var collection = indexView.ViewData.Model as List<Product>;
-
-//            // Assert
-//            CollectionAssert.Contains(collection, testProduct);
-//        }
-
-//        [TestMethod]
-//        public void ProductController_IndexModelContainsCorrectData_List()
-//        {
-//            //Arrange
-//            ProductController controller = new ProductController();
-//            IActionResult actionResult = controller.Index();
-//            ViewResult indexView = controller.Index() as ViewResult;
-
-//            //Act
-//            var result = indexView.ViewData.Model;
-
-//            //Assert
-//            Assert.IsInstanceOfType(result, typeof(List<Product>));
-//        }
-
-//    }
-//}
-
-
-using System.Text;
+﻿using System.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -147,42 +109,77 @@ namespace Gummi.Tests.ControllerTests
             Assert.IsInstanceOfType(resultView, typeof(RedirectToActionResult));
 
         }
+
         [TestMethod]
-        public void Mock_GetDetails_ReturnsView()
+        public void ProductController_AddsProductToIndexModelData_Collection()
         {
             // Arrange
-            Product testProduct = new Product
-            {
-                ProductId = 1,
-                Name = "Gummi Bear"
-            };
-
-            SetUpTheMockDb();
-            ProductsController controller = new ProductsController(mock.Object);
-
-            // Act
-            var resultView = controller.Details(testProduct.ProductId) as ViewResult;
-            var model = resultView.ViewData.Model as Product;
-
-            // Assert
-            Assert.IsInstanceOfType(resultView, typeof(ViewResult));
-            Assert.IsInstanceOfType(model, typeof(Product));
-        }
-        [TestMethod]
-        public void DB_CreatesNewEntries_Collection()
-        {
-            // Arrange
-            ProductsController controller = new ProductsController(db);
+            ProductsController controller = new ProductsController();
             Product testProduct = new Product();
-            testProduct.Name = "Gummi Bear";
+            testProduct.Description = "test product";
 
             // Act
             controller.Create(testProduct);
-            var collection = (controller.Index() as ViewResult).ViewData.Model as List<Product>;
+            ViewResult indexView = new ProductsController().Index() as ViewResult;
+            var collection = indexView.ViewData.Model as List<Product>;
 
             // Assert
             CollectionAssert.Contains(collection, testProduct);
         }
+
+        [TestMethod]
+        public void ProductController_IndexModelContainsCorrectData_List()
+        {
+            //Arrange
+            ProductsController controller = new ProductsController();
+            IActionResult actionResult = controller.Index();
+            ViewResult indexView = controller.Index() as ViewResult;
+
+            //Act
+            var result = indexView.ViewData.Model;
+
+            //Assert
+            Assert.IsInstanceOfType(result, typeof(List<Product>));
+        }
+
+
+        //[TestMethod]
+        //public void Mock_GetDetails_ReturnsView()
+        //{
+        //    // Arrange
+        //    Product testProduct = new Product
+        //    {
+        //        ProductId = 1,
+        //        Name = "Gummi Bear"
+        //    };
+
+        //    SetUpTheMockDb();
+        //    ProductsController controller = new ProductsController(mock.Object);
+
+        //    // Act
+        //    var resultView = controller.Details(testProduct.ProductId) as ViewResult;
+        //    var model = resultView.ViewData.Model as Product;
+
+        //    // Assert
+        //    Assert.IsInstanceOfType(resultView, typeof(ViewResult));
+        //    Assert.IsInstanceOfType(model, typeof(Product));
+        //}
+
+        //[TestMethod]
+        //public void DB_CreatesNewEntries_Collection()
+        //{
+        //    // Arrange
+        //    ProductsController controller = new ProductsController(db);
+        //    Product testProduct = new Product();
+        //    testProduct.Name = "Gummi Bear";
+
+        //    // Act
+        //    controller.Create(testProduct);
+        //    var collection = (controller.Index() as ViewResult).ViewData.Model as List<Product>;
+
+        //    // Assert
+        //    CollectionAssert.Contains(collection, testProduct);
+        //}
 
 
     }
