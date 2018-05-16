@@ -38,7 +38,7 @@ UPDATE:
 * The database should be built code-first. They want to have simple setup on the Gummi Bear Kingdom servers, so I'll need to have a simple database migration set up and ready to run.
 * UPDATE 4/27/18: The site should have functionality to review products so the database should include a one-to-many relationship between Products and Reviews.
 - Products: must have a name, cost, and description.
-- Reviews must have an author, content_body, and rating (1-5).
+- Reviews must have an author, content body, and rating (1-5).
 - Migrations are used to update the database from last week.
 
 **Landing Page**
@@ -67,8 +67,8 @@ The site will include the following functionality and their corresponding tests:
 * Fully functioning Review model with tests for: - X
 	- The constructor
 	- Equals()
-	- Method for checking if rating is between 1-5,
-	- Method for checking if the Review’s content_body contains less than 255 characters.
+	- Method for checking if rating is between 1-5 -- N/A THE FORM LIMITS THE INPUT
+	- Method for checking if the Review’s content_body contains less than 255 characters. -- N/A THE FORM LIMITS THE INPUT
 
 * Products can be created, retrieved, updated, and removed from the database, as demonstrated by integration tests for:
 	- Create()
@@ -76,19 +76,22 @@ The site will include the following functionality and their corresponding tests:
 	- Update()
 	- Delete()
 	- DeleteAll()
+	(Using TEST database)
 
 * Reviews are properly retrieved from and saved to the database with tests for:
 	- Index()
 	- Create()
+	(Using TEST database)
 
 * All controller methods return the correct ActionResult (usually ViewResult or RedirectToActionResult) and Model datatype for each method. With tests for:
 	- GET and POST for each route.
+	(Using mock database)
 
 **Styling**
 
 * This should be a well-styled site I'm proud to show potential employers. After core functionality is in place, any extra time will be spent on styling.
 
-* If I need inspiration, I will choose a site online with a style I like and build a style for my app based on it. However, I will then include a link to the site your styles are based on here in the README.md.
+* If I need inspiration, I will choose a site online with a style I like and build a style for my app based on it. However, I will then include a link to the site that styles are based on here in the README.md.
 
 ## User Stories
 There will ultimately be two levels of user for this site: Administrator and Reader. However, at the outset, it is assumed every user is an Admin to avoid spending time bogged down with authorization programming.
@@ -123,27 +126,28 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 * UPDATE: 4/27 -- User View
 
-* UPDATE: 4/27 -- User one-to-many on Reviews? <------------------------------------
+* UPDATE: 4/27 -- User one-to-many on Reviews
 
-* Model testing with mock database
-	- UPDATE: 4/27 -- Product Model Tests _(1/3)_
-	- UPDATE: 4/27 -- Review Model Tests _(0/4)_
-	- UPDATE: 4/27 -- User Model Tests _(0/3)_
-		* User tests will include object Existence, Equals, and a Method
+* TESTING ************************************************
 
-
+* Model testing with (mock or test database?)   
+	- UPDATE: 4/27 -- Product Model Tests _(3/3)_
+	- UPDATE: 4/27 -- Review Model Tests _(4/4)_
 
 * Controller Testing with mock database
 
 * Models and Controllers work
 
 * Integration testing with models and controllers using test database
+	- CRUD
+
+* *********************************************************
 
 * Add Views
 
 * MVC working
 
-* UPDATE: 4/27 -- Validate Form inputs?
+* UPDATE: 4/27 -- Validate Form inputs? (The form traps for length 255 and rating 1-5)
 
 * Layout is present for styling
 
@@ -153,7 +157,8 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 ## Methodology and Comments
 
-I started with the travel blog website as my example template because it is constructed to be a blog. I adapted the Experiences/Locations/People into individual models for Users, Reviews, and Products but they ended up having no relation to their originators from the Travel site. I got CRUD up and running and did some work with styles the first week and I started some tests during this second week. Unfortunately I ran into migration errors that have eaten into my time. I will complete the project during the upcoming week. I still have to implement user sign up, adding reviews to products, seeing the top three products on the site's landing page, and a few other things.
+I started with the travel blog website as my example template because it is constructed to be a blog. I adapted the Experiences/Locations/People into individual models for Users, Reviews, and Products but they ended up having no relation to their originators from the Travel site. I got CRUD up and running and did some work with styles the first week and I started some tests during this second week. Unfortunately I ran into migration errors that have eaten into my time. I will complete the project during the upcoming weeks. I still have to implement user sign up, adding reviews to products, seeing the top three products on the site's landing page, and a few other things.
+UPDATE: Product reviews are in, the products can be averaged, the top three products are visible. Finishing up the tests.
 
 ## Technologies Used
 
@@ -171,14 +176,16 @@ I started with the travel blog website as my example template because it is cons
 TBD
 
 ## Setup/Installation Requirements
-TBD
+Clone the repository from https://github.com/agro23/GummiCompany
+Migrate the database using Entity Framework (cd to the Gummi directory and dotnet ef database update)
+Run the program using Visual Studio
 
 ## Future expansion
- There is room to separate the Admins from Users. There are always more tests that can be run. Also I'd like to implement a more clean method of showing the reviews. I'd like to do authentication too at some point.
+ I could always put user authentication back in and then separate the Admins from Users. There are always more tests that can be run. Also I'd like to implement a more clean method of showing the reviews.
 
 ## Known Bugs and Issues
 
-There are no known bugs or issues at this time other than the program not fulfilling its function with reviews attached to products and users can't log in.
+There are no known bugs or issues at this time other than the program not having user authentication enabled and the styling could be much better.
 
 ## Support and contact details
 

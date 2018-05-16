@@ -42,6 +42,10 @@ namespace Gummi.Tests.ModelTests
         [TestMethod]
         public void ReviewRatingIsBetween1and5_ReturnsTrue_Bool()
         {
+            // **************************************************************
+            // Unnecessary because the form itself limits the input.
+            // **************************************************************
+
             //Arrange
 
             // Make a review
@@ -60,7 +64,11 @@ namespace Gummi.Tests.ModelTests
 
         [TestMethod]
         public void ReviewContentLengthUnder255Char_ReturnsTrue_Bool()
-        {
+        {   
+            // **************************************************************
+            // Unnecessary because the form itself limits the input.
+            // **************************************************************
+
             //Arrange
             // create a Review for a product
 

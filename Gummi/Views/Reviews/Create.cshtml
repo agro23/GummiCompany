@@ -61,6 +61,14 @@ public int ReviewId { get; set; }
                 <label asp-for="Rating" class="col-md-2 "></label>
                 <div class="col-md-10">
                     <input asp-for="Rating" class="form-control" type="number" min="1" max="5" />
+
+                    <p>Enter range data</p>
+                    <p><asp:textbox runat="server" id="txtRangeValidator">
+                    </asp:textbox></p>
+                    <p><asp:rangevalidator ID="Rangevalidator1" errormessage="Please enter value between 1-99." forecolor="Red" controltovalidate="txtRangeValidator" minimumvalue="1" maximumvalue="99" runat="server" Type="Integer">
+            </asp:rangevalidator></p>
+
+                    
                 </div>
             </div>
             <div class="form-group">

@@ -1,23 +1,20 @@
 ﻿<Properties StartupConfiguration="{F49D2744-64E6-41D2-9672-35ED8AB2F103}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gummi/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gummi/Views/Products/Details.cshtml">
     <Files>
-      <File FileName="Gummi/Models/Review.cs" Line="27" Column="25" />
-      <File FileName="Gummi/Models/Product.cs" Line="70" Column="3" />
-      <File FileName="Gummi/Controllers/ProductController.cs" Line="63" Column="1" />
-      <File FileName="Gummi/Views/Products/Details.cshtml" Line="70" Column="10" />
-      <File FileName="Gummi/Views/Reviews/Create.cshtml" Line="67" Column="61" />
-      <File FileName="Gummi/Controllers/ReviewController.cs" Line="40" Column="1" />
-      <File FileName="Gummi/Views/Home/Index.cshtml" Line="39" Column="31" />
-      <File FileName="Gummi/Controllers/HomeController.cs" Line="16" Column="32" />
-      <File FileName="Gummi/Startup.cs" Line="66" Column="1" />
+      <File FileName="Gummi/Models/Review.cs" Line="28" Column="10" />
+      <File FileName="Gummi/Models/Product.cs" Line="13" Column="1" />
+      <File FileName="Gummi/Controllers/ProductController.cs" Line="64" Column="9" />
+      <File FileName="Gummi/Views/Products/Details.cshtml" Line="28" Column="71" />
+      <File FileName="Gummi/Views/Reviews/Create.cshtml" Line="65" Column="21" />
+      <File FileName="Gummi/Controllers/ReviewController.cs" Line="40" Column="10" />
+      <File FileName="Gummi/Views/Home/Index.cshtml" Line="50" Column="64" />
+      <File FileName="Gummi/Controllers/HomeController.cs" Line="19" Column="37" />
+      <File FileName="Gummi/Views/Products/Index.cshtml" Line="37" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/Guest/Desktop/GummiCompany/Gummi/Controllers/ReviewController.cs" relfile="Gummi/Controllers/ReviewController.cs" line="35" column="30" />
-      <Breakpoint file="/Users/Guest/Desktop/GummiCompany/Gummi/Controllers/ProductController.cs" relfile="Gummi/Controllers/ProductController.cs" line="61" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Gummi PreferredExecutionTarget="MonoDevelop.Default" />

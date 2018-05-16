@@ -26,15 +26,16 @@ namespace Gummi.Tests.ModelTests
         {
             //Arrange
 
-            // Make two Products
+            var myProduct1 = new Product();
+            var myProduct2 = new Product();
 
             //Act
-
-            // Give each Product some property definitions
+            myProduct1.Name = "Impala";
+            myProduct2.Name = "Impala";
 
             //Assert
 
-            // Assert.AreEqual(obj1, obj2);
+            Assert.AreEqual(myProduct1, myProduct2);
         }
 
         [TestMethod]
@@ -42,9 +43,13 @@ namespace Gummi.Tests.ModelTests
         {
             //Arrange
 
-            var myProduct = new Product();
-            // Give it five Reviews
-            // This is going to require using a Mock database
+            // Make a Product
+            var myProduct = new Product(9999, "King Size Gummi Bear", 55, "The biggest gummi bear you've ever seen!");
+
+            // Give it three Reviews
+            var review1 = new Review(9999, "Bazooka Joe", "I like candy.", 5);
+            var review2 = new Review(9999, "Fred Derf", "This could have been better. It was okay.", 3);
+            var review3 = new Review(9999, "Dawn Don", "It was scary. Who eats that much candy?", 1);
 
             //Act
 

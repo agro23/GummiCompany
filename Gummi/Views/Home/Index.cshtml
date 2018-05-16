@@ -21,7 +21,7 @@
     <div class="panel-row infoGeneral top-3">
         <h2>Our Most Popluar Products:</h2>
         <br>
-           <div class="panel-row" id="topProd1">     
+        <!--   <div class="panel-row" id="topProd1">     
                 <div class="col-md-3">PRODUCT PICTURE</div>
                 <div class="col-md-9">PRODUCT 1 INFO & LINK</div>
            </div>
@@ -32,57 +32,36 @@
            <div class="panel-row" id="topProd3">
                 <div class="col-md-3">PRODUCT PICTURE</div>
                 <div class="col-md-9">PRODUCT 3 INFO & LINK</div>
-           </div>
-            @*<div>    
-            @foreach (var item in Model)
+           </div>-->
+            <div>    
+            @foreach (var product in Model)
             {
             <div class="well">
                 <h3>
-                    Name: @Html.DisplayFor(modelItem => item.Name)
+                    Name: @Html.DisplayFor(modelItem => product.Name)
                 </h3>
                 <h4>
-                    Cost: @Html.DisplayFor(modelItem => item.Cost)
+                    Description: @Html.DisplayFor(modelItem => product.Description)
                 </h4>
                 <h4>
-                    Description: @Html.DisplayFor(modelItem => item.Description)
+                    Cost: @Html.DisplayFor(modelItem => product.Cost)                    
                 </h4>
                 <h4>
-                    Average rating: @String.Format("{0:N2}", @item.RatingsAverage())
+                    Average rating: @product.getAverageRating()
                 </h4>
-                @Html.ActionLink("Details", "Details","Products", new { id = @item.ProductId })
+                @Html.ActionLink("Details", "Details","Products", new { id = @product.ProductId })
             </div>
-             }*@
+             }
         <br>
     </div>
         @*<p class="panel-row">This is our two columns of top 3 products</p>*@
 
     <div class="panel-row infoGeneral">
         <br>
-        <p>Link to the Products page goes here.</p>
+        <p>@Html.ActionLink("See all of our Products", "Index", "Products")</p>
     </div>
 
  </div>
-
-        @*
-        @foreach (var item in Model)
-{
-<div class="well">
-    <h3>
-        Name: @Html.DisplayFor(modelItem => item.Name)
-    </h3>
-    <h4>
-        Cost: @Html.DisplayFor(modelItem => item.Cost)
-    </h4>
-    <h4>
-        Description: @Html.DisplayFor(modelItem => item.Description)
-    </h4>
-    <h4>
-        Average rating: @String.Format("{0:N2}", @item.AverageRating())
-    </h4>
-    @Html.ActionLink("Details", "Details","Products", new { id = @item.ProductId })
-</div>
-}
-        *@
 
 
        
