@@ -128,7 +128,9 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 
 * UPDATE: 4/27 -- User one-to-many on Reviews
 
-* TESTING ************************************************
+* TESTING:
+
+* *********************************************************
 
 * Model testing with (mock or test database?)   
 	- UPDATE: 4/27 -- Product Model Tests _(3/3)_
@@ -141,7 +143,7 @@ There will ultimately be two levels of user for this site: Administrator and Rea
 * Integration testing with models and controllers using test database
 	- CRUD
 
-* *********************************************************
+
 
 * Add Views
 

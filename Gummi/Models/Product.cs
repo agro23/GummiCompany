@@ -55,6 +55,7 @@ namespace Gummi.Models
             {
                 average.Add(review.Rating);
             }
+
             return (int)Math.Round(average.Average()); // send back the average from the built-in Average method cast as a Rounded int
         }
 

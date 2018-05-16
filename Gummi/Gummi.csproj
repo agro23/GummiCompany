@@ -19,6 +19,7 @@
     <Folder Include="Migrations\" />
     <Folder Include="Views\Reviews\" />
     <Folder Include="Views\Users\" />
+    <Folder Include="Models\Repositories\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -8,6 +8,8 @@ namespace Gummi.Models
 {
     public class GummiDbContext : DbContext
     {
+        //private DbContextOptions<Gummi.Tests.Models.GummiTestDbContext> options;
+
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Product> Products { get; set; }

@@ -6,48 +6,102 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Gummi.Models;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Gummi.Models.Repositories;
 
 namespace Gummi.Controllers
 {
     public class ProductsController : Controller
     {
-        private GummiDbContext db = new GummiDbContext();
-        public IActionResult Index()
+
+        private IProductRepository productRepo;  // New!
+
+        public ProductsController(IProductRepository repo = null)
         {
-            List<Product> model = db.Products.ToList();
-            return View(model);
+            if (repo == null)
+            {
+                this.productRepo = new EFProductRepository();
+            }
+            else
+            {
+                this.productRepo = repo;
+            }
         }
+
+        private GummiDbContext db = new GummiDbContext();
+
+        public ViewResult Index()
+        {
+            // Updated:
+            return View(productRepo.Products.ToList());
+        }
+
+        //public IActionResult Index() // MINE
+        //{
+        //    List<Product> model = db.Products.ToList();
+        //    return View(model);
+        //}
 
         public IActionResult Create()
         {
             return View();
         }
 
+        //[HttpPost] // MINE
+        //public IActionResult Create(Product product)
+        //{
+        //    db.Products.Add(product);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
         [HttpPost]
         public IActionResult Create(Product product)
         {
-            db.Products.Add(product);
-            db.SaveChanges();
+            productRepo.Save(product);   // Updated
+            // Removed db.SaveChanges() call
             return RedirectToAction("Index");
         }
 
+
+
+        //public IActionResult Edit(int id) // MINE
+        //{
+        //    var thisProduct = db.Products.FirstOrDefault(Products => Products.ProductId == id);
+        //    return View(thisProduct);
+        //}
+
+        //[HttpPost]
+        //public IActionResult Edit(Product product)
+        //{
+        //    db.Entry(product).State = EntityState.Modified;
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
+
+
+
         public IActionResult Edit(int id)
         {
-            var thisProduct = db.Products.FirstOrDefault(Products => Products.ProductId == id);
+            // Updated:
+            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
             return View(thisProduct);
         }
 
         [HttpPost]
         public IActionResult Edit(Product product)
         {
-            db.Entry(product).State = EntityState.Modified;
-            db.SaveChanges();
+            productRepo.Edit(product);   // Updated!
+            // Removed db.SaveChanges() call
             return RedirectToAction("Index");
         }
 
-        //public IActionResult Details(int id)
+
+
+
+
+
+        //public IActionResult Details(int id) // THEIRS
         //{
         //    var thisProduct = db.Products.FirstOrDefault(Products => Products.ProductId == id);
         //    return View(thisProduct);
@@ -62,40 +116,51 @@ namespace Gummi.Controllers
             return View(thisProduct);
         }
 
+        //public IActionResult Details(int id) // THEIRS
+        //{
+        //    // Updated:
+        //    Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
+        //    return View(thisProduct);
+        //}
+
+        //public IActionResult Delete(int id) // MINE
+        //{
+        //    var thisProduct = db.Products.FirstOrDefault(Products => Products.ProductId == id);
+        //    return View(thisProduct);
+        //}
+
+        //[HttpPost, ActionName("Delete")]
+        //public IActionResult DeleteConfirmed(int id)
+        //{
+        //    var thisProduct = db.Products.FirstOrDefault(Products => Products.ProductId == id);
+        //    db.Products.Remove(thisProduct);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
 
         public IActionResult Delete(int id)
         {
-            var thisProduct = db.Products.FirstOrDefault(Products => Products.ProductId == id);
+            // Updated:
+            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
             return View(thisProduct);
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            var thisProduct = db.Products.FirstOrDefault(Products => Products.ProductId == id);
-            db.Products.Remove(thisProduct);
-            db.SaveChanges();
+            // Updated:
+            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
+            productRepo.Remove(thisProduct);   // Updated!
+            // Removed db.SaveChanges() call
             return RedirectToAction("Index");
         }
+
+
+
+
+
     }
 }
 
-
-     /*
-
-
-List<Product> products = db.Products.Include(p => p.Reviews).ToList();
-List<Product> sortedProducts = products.OrderByDescending(p => p.AverageRating()).ToList();
-if (sortedProducts.Count >= 3)
-    {
-        List<Product> topThree = new List<Product> { sortedProducts[0], sortedProducts[1], sortedProducts[2] };
-        return View(topThree);
-    }
-else
-    {
-        return View(sortedProducts);
-    }
-
-
-
-*/
+  
